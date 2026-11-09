@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CapCut Academy — Formation Monteur Pro</title>
+<style>
+:root{--bg:#0a0c11;--bg2:#0f121a;--panel:#131722;--panel2:#1a1f2c;--line:#242b3a;--text:#eef0f6;--muted:#8c94a8;--accent:#2de2c0;--accent2:#5b8cff;--ink:#03201a;--amber:#ffb84d;--danger:#ff6b7d;--shadow:0 8px 30px rgba(0,0,0,.3);--r:14px;color-scheme:dark}
+:root[data-theme="light"]{--bg:#f4f6fa;--bg2:#eceff5;--panel:#fff;--panel2:#f1f3f8;--line:#e0e4ec;--text:#10131b;--muted:#5a6275;--accent:#0a8f77;--accent2:#3a64d8;--ink:#fff;--amber:#b86e00;--danger:#d23a50;--shadow:0 8px 24px rgba(20,30,60,.08);color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font:15px/1.65 "Inter","Segoe UI",-apple-system,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;background:var(--bg);background-image:radial-gradient(900px 400px at 85% -10%,rgba(91,140,255,.10),transparent 60%),radial-gradient(700px 360px at 0 0,rgba(45,226,192,.07),transparent 60%);background-attachment:fixed}
+.top{position:sticky;top:0;z-index:40;height:60px;display:flex;align-items:center;gap:16px;padding:0 20px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+.logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));position:relative;box-shadow:0 4px 16px rgba(45,226,192,.3)}
+.logo::after{content:"";position:absolute;inset:9px 8px 9px 12px;background:var(--ink);clip-path:polygon(0 0,100% 50%,0 100%)}
+.brand b{display:block;font-size:15px;letter-spacing:-.01em;line-height:1.2}
+.brand span{display:block;font-size:11.5px;color:var(--muted);line-height:1.2}
+.top-progress{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);min-width:180px}
+.progress-bar{flex:1;height:6px;border-radius:99px;background:var(--panel2);overflow:hidden}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;transition:width .5s}
+.icon-btn{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;font-size:16px}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn.menu{display:none}
+.app{display:flex;align-items:flex-start;min-height:calc(100vh - 60px)}
+.rail{width:300px;flex:none;position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto;padding:18px 14px 40px;border-right:1px solid var(--line);background:color-mix(in srgb,var(--panel) 60%,transparent)}
+.nav-title{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:20px 10px 8px;font-weight:700}
+.nav-item{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:11px;cursor:pointer;border:1px solid transparent;transition:background .15s}
+.nav-item:hover{background:var(--panel2)}
+.nav-item.active{background:var(--panel);border-color:var(--line);box-shadow:var(--shadow)}
+.nav-item .num{width:26px;height:26px;border-radius:8px;flex:none;display:grid;place-items:center;font-size:11px;font-weight:700;background:var(--panel2);color:var(--muted);border:1px solid var(--line)}
+.nav-item.active .num{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--ink);border-color:transparent}
+.nav-item.done .num{background:var(--accent);color:var(--ink);border-color:transparent}
+.nav-item .ttl{flex:1;font-size:13.5px;font-weight:600;line-height:1.3}
+.nav-item .ttl small{display:block;font-weight:400;font-size:11.5px;color:var(--muted);margin-top:1px}
+.nav-item.locked .ttl{opacity:.55}
+.soon{font-style:normal;font-size:10px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+main{flex:1;min-width:0;padding:40px clamp(20px,5vw,64px) 80px;max-width:1000px}
+.kicker{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);padding:4px 12px;border-radius:99px;margin-bottom:14px}
+h1.page-title{font-size:clamp(28px,4.2vw,42px);line-height:1.12;letter-spacing:-.025em;margin:0 0 14px;font-weight:800}
+.lede{font-size:17px;color:var(--muted);max-width:68ch;margin:0 0 18px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.chip{font-size:12px;padding:5px 12px;border-radius:99px;background:var(--panel);border:1px solid var(--line);color:var(--muted)}
+.chip b{color:var(--text);font-weight:600}
+section.block{margin:0 0 38px}
+section.block h2{font-size:22px;letter-spacing:-.015em;margin:0 0 14px;padding:0;border:0;display:flex;align-items:center;gap:12px}
+section.block h2::before{content:"";width:4px;height:22px;border-radius:4px;background:linear-gradient(var(--accent),var(--accent2))}
+section.block h3{font-size:15.5px;margin:22px 0 8px}
+p{margin:0 0 12px}
+ul,ol{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:6px}
+li::marker{color:var(--accent)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;margin:18px 0;box-shadow:var(--shadow)}
+.card-title{display:flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-bottom:6px}
+.card-title::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px color-mix(in srgb,currentColor 20%,transparent)}
+.card.tip{border-left:3px solid var(--amber)}
+.card.tip .card-title{color:var(--amber)}
+.card.warn{border-left:3px solid var(--danger)}
+.card.warn .card-title{color:var(--danger)}
+.exercise{margin:22px 0;padding:18px 22px;border-radius:var(--r);border:1px dashed color-mix(in srgb,var(--accent) 55%,transparent);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,transparent),color-mix(in srgb,var(--accent2) 7%,transparent))}
+.exercise .card-title{color:var(--accent)}
+kbd{display:inline-block;min-width:24px;text-align:center;padding:2px 8px;border-radius:7px;font:600 12px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-bottom-width:3px;color:var(--text)}
+table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel);margin:16px 0;font-size:13.5px}
+th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:11px 14px}
+td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top;word-break:break-word}
+tbody tr:hover td{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.quiz-q{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-bottom:14px}
+.quiz-opts label{display:flex;gap:10px;align-items:flex-start;padding:11px 14px;margin:8px 0;border:1px solid var(--line);border-radius:11px;cursor:pointer;background:var(--bg2);transition:.15s}
+.quiz-opts label:hover{border-color:var(--accent)}
+.quiz-opts label:has(input:checked){border-color:var(--accent2);background:color-mix(in srgb,var(--accent2) 10%,transparent)}
+.quiz-opts input{accent-color:var(--accent);margin-top:4px}
+.quiz-opts label.correct{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.quiz-opts label.wrong{border-color:var(--danger);background:color-mix(in srgb,var(--danger) 10%,transparent)}
+.quiz-result{display:none;margin-top:8px;font-size:13.5px;color:var(--muted);padding:10px 14px;border-radius:10px;background:var(--panel2)}
+.score{margin-top:14px;padding:14px 18px;border-radius:var(--r);font-weight:700;border:1px solid var(--line);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,transparent),color-mix(in srgb,var(--accent2) 14%,transparent))}
+.btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--ink);border:0;border-radius:11px;padding:11px 20px;font:700 14px inherit;font-family:inherit;cursor:pointer;transition:.15s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.actions{margin:40px 0 18px;padding-top:24px;border-top:1px solid var(--line)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.pager a{display:block;padding:14px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);cursor:pointer;font-weight:600}
+.pager a:hover{border-color:var(--accent)}
+.pager small{display:block;color:var(--muted);font-weight:400;font-size:11.5px}
+.pager .next{text-align:right}
+.hero{padding:38px;border-radius:22px;border:1px solid var(--line);margin-bottom:26px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--panel)),color-mix(in srgb,var(--accent2) 13%,var(--panel)))}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:30px}
+.stat{padding:16px 18px;border-radius:var(--r);background:var(--panel);border:1px solid var(--line)}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em}
+.stat span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.mcard{padding:18px;border-radius:var(--r);background:var(--panel);border:1px solid var(--line);cursor:pointer;transition:.18s;position:relative}
+.mcard:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
+.mcard .n{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.1em}
+.mcard h3{margin:6px 0 4px;font-size:16px}
+.mcard p{font-size:13px;color:var(--muted);margin:0}
+.mcard.locked{opacity:.55}
+.mcard .st{position:absolute;top:16px;right:16px;font-size:11px;color:var(--muted)}
+.mcard.done .st{color:var(--accent)}
+.glossary dt{font-weight:700;margin-top:14px}
+.glossary dd{margin:3px 0 0;color:var(--muted)}
+.coming{padding:22px;border:1px dashed var(--line);border-radius:var(--r);color:var(--muted)}
+footer.note{margin-top:40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.scrim{display:none}
+@media(max-width:900px){.icon-btn.menu{display:block}.rail{position:fixed;left:0;top:60px;z-index:60;transform:translateX(-102%);transition:.25s;background:var(--bg2);width:min(320px,86vw)}body.menu-open .rail{transform:none}body.menu-open .scrim{display:block;position:fixed;inset:60px 0 0;background:rgba(0,0,0,.5);z-index:55}.top-progress{min-width:100px}.brand span{display:none}.pager{grid-template-columns:1fr}.hero{padding:24px}}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:8px 2px;cursor:pointer}.checklist input{accent-color:var(--accent);margin-top:5px}
+main{counter-reset:sec}
+section.block h2{counter-increment:sec;scroll-margin-top:80px}
+section.block h2::before{content:counter(sec,decimal-leading-zero);width:auto;height:auto;font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--accent);padding:5px 9px;border-radius:8px;background:color-mix(in srgb,var(--accent) 12%,transparent)}
+main p,main li{max-width:76ch}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--panel2) 45%,transparent)}
+.toc{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-12px 0 32px}
+.toc b{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.toc a{font-size:12.5px;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--panel);cursor:pointer}
+.toc a:hover{border-color:var(--accent);color:var(--accent)}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0 18px;margin:10px 0}
+summary{cursor:pointer;padding:14px 0;font-weight:600}
+details[open] summary{border-bottom:1px solid var(--line);margin-bottom:10px}
+details p{color:var(--muted)}
+.search{width:100%;padding:10px 14px;border-radius:11px;border:1px solid var(--line);background:var(--bg2);color:var(--text);font:inherit;font-size:13.5px;margin:0 0 12px}
+.search:focus{outline:2px solid var(--accent);outline-offset:1px}
+.fiches{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.fiche{padding:18px 20px;border-radius:var(--r);background:var(--panel);border:1px solid var(--line)}
+.fiche h3{margin:2px 0 6px;font-size:16px}
+.fiche p{font-size:13.5px;color:var(--muted)}
+.fiche .mod{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.fiche dt{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:10px;font-weight:700}
+.fiche dd{margin:2px 0 0;font-size:13.5px}
+#readbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:70;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+#toTop{display:none;position:fixed;right:20px;bottom:20px;z-index:45;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:18px;cursor:pointer;box-shadow:var(--shadow)}
+@media print{:root{--bg:#fff;--panel:#fff;--panel2:#f3f3f3;--line:#ccc;--text:#000;--muted:#444}.top,.rail,.actions,.toc,#readbar,#toTop,.scrim,.search,.btn{display:none!important}body{background:#fff}main{max-width:none;padding:0}.card,.fiche,details{box-shadow:none;break-inside:avoid}}
+main{position:relative;animation:pe .45s ease both}
+@keyframes pe{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+main::before{content:attr(data-num);position:absolute;top:-6px;right:clamp(10px,4vw,50px);font-size:clamp(90px,16vw,190px);font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--text);opacity:.045;pointer-events:none}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+.hero{background-size:220% 220%;animation:hg 16s ease infinite}
+@keyframes hg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+.fig{margin:0 0 36px;padding:20px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,var(--panel),var(--bg2));box-shadow:var(--shadow)}
+.fig svg{width:100%;height:auto;display:block}
+.fig text{fill:var(--text);font:600 12.5px Inter,"Segoe UI",Arial,sans-serif}
+.fig text.mu{fill:var(--muted);font-weight:500}
+.fig text.wt{fill:#fff;font-size:14px}
+.fig figcaption{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:center}
+.fig .a{fill:var(--accent)}.fig .b{fill:var(--accent2)}.fig .p{fill:var(--panel2);stroke:var(--line)}.fig .mu-f{fill:var(--muted);opacity:.5}
+.shot{display:block;max-width:100%;margin:16px auto 0;border-radius:12px;border:1px solid var(--line)}
+.zn rect{fill:var(--panel2);stroke:var(--line);animation:zp 8s infinite}
+@keyframes zp{0%,22%{fill:var(--accent);fill-opacity:.4}28%,100%{fill:var(--panel2);fill-opacity:1}}
+.kc rect{fill:var(--panel2);stroke:var(--line);stroke-width:2}
+.kb{animation:kp 5s infinite}
+@keyframes kp{0%,44%{fill:var(--panel2)}48%,56%{fill:var(--accent)}60%,100%{fill:var(--panel2)}}
+.ph{animation:phm 5s infinite}
+@keyframes phm{0%{transform:translateX(-198px)}45%,100%{transform:translateX(0)}}
+.cutr{animation:cr 5s infinite}
+@keyframes cr{0%,48%{transform:translateX(0)}56%,92%{transform:translateX(20px)}100%{transform:translateX(0)}}
+.gr{transform-box:fill-box;transform-origin:left;animation:gw2 1.2s both}
+@keyframes gw2{from{transform:scaleX(0)}}
+.lane,.mrow{display:flex;align-items:center;gap:14px;margin:12px 0}
+.lane span,.mrow span{width:150px;flex:none;font-size:13px;color:var(--muted)}
+.trk{flex:1;height:26px;border-radius:99px;background:var(--panel2);position:relative}
+.trk i{position:absolute;top:5px;left:0;width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));animation:mv 2.6s infinite alternate}
+@keyframes mv{to{left:calc(100% - 16px)}}
+.mt{flex:1;height:16px;border-radius:99px;background:var(--panel2);overflow:hidden}
+.mt.tall{height:24px}
+.mt b{display:block;height:100%;width:100%;transform-origin:left;border-radius:99px}
+.mrow small{font-size:12px;color:var(--muted);min-width:150px}
+@keyframes vo{0%,15%{transform:scaleX(.08)}25%,60%{transform:scaleX(.9)}70%,100%{transform:scaleX(.08)}}
+@keyframes mu2{0%,15%{transform:scaleX(.75)}25%,60%{transform:scaleX(.25)}70%,100%{transform:scaleX(.75)}}
+@keyframes sf{0%,23%,35%,100%{transform:scaleX(.04)}27%{transform:scaleX(.55)}}
+.bar{transform-origin:left;animation:gw2 1.6s both}
+.wd{opacity:0;animation:pop 4.5s infinite}
+.wd.hl{fill:var(--accent);font-size:20px}
+@keyframes pop{0%{opacity:0;transform:translateY(8px)}8%,80%{opacity:1;transform:none}92%,100%{opacity:0}}
+.crv{fill:none;stroke:var(--accent);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dr 4s ease infinite}
+@keyframes dr{0%{stroke-dashoffset:1}60%,100%{stroke-dashoffset:0}}
+.sz{fill:var(--danger);animation:pl 2.4s infinite alternate}
+@keyframes pl{from{opacity:.15}to{opacity:.5}}
+.cmp{position:relative;border-radius:14px;overflow:hidden;max-width:560px;margin:0 auto}
+.cmp .lay{display:block}.cmp .lay+.lay{position:absolute;inset:0}
+.cmp svg{width:100%;height:auto;display:block}
+.graded{filter:contrast(1.25) saturate(1.35) sepia(.25) hue-rotate(-12deg);clip-path:inset(0 50% 0 0)}
+.tg{position:absolute;top:10px;padding:3px 10px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:700}
+.tg.l{right:10px}.tg.r{left:10px}
+.rng{display:block;width:min(560px,100%);margin:14px auto 0;accent-color:var(--accent)}
+textarea.notes{width:100%;min-height:120px;resize:vertical;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit;font-size:14px}
+textarea.notes:focus{outline:2px solid var(--accent);outline-offset:1px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media print{.rv{opacity:1!important;transform:none!important}main::before{display:none}}
+@media(max-width:640px){.lane span,.mrow span{width:96px}.mrow small{display:none}}
+html[data-mode="pro"]{--accent:#b794ff;--accent2:#ff7ab8;--ink:#1a0b33}
+html[data-mode="pro"][data-theme="light"]{--accent:#6d2fe0;--accent2:#d6336c;--ink:#fff}
+html[data-mode="pro"] body{background-image:radial-gradient(900px 400px at 85% -10%,rgba(255,122,184,.10),transparent 60%),radial-gradient(700px 360px at 0 0,rgba(183,148,255,.10),transparent 60%)}
+.mode-pill{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:99px;padding:7px 14px;font-weight:700;font-size:12px;font-family:inherit;cursor:pointer}
+html[data-mode="pro"] .mode-pill{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--ink);border:0}
+.pro-i{display:none}
+html[data-mode="pro"] .pro-i{display:inline-block}
+body.focus .rail{display:none}
+body.focus main{margin:0 auto}
+.badge{font-size:10px;font-weight:800;letter-spacing:.1em;padding:3px 9px;border-radius:99px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--ink)}
+#gate{position:fixed;inset:0;z-index:200;display:none;overflow:auto;padding:30px 18px;background:radial-gradient(900px 500px at 80% -10%,rgba(91,140,255,.18),transparent 60%),radial-gradient(800px 500px at 0 100%,rgba(183,148,255,.16),transparent 60%),var(--bg)}
+#gate.show{display:grid;place-items:center}
+.gwrap{max-width:900px;width:100%;text-align:center;animation:pe .5s ease both}
+.logo.big{width:56px;height:56px;border-radius:16px;margin:0 auto 14px}
+.gwrap h1{font-size:clamp(28px,5vw,44px);letter-spacing:-.025em;margin:0 0 8px}
+.gl{color:var(--muted);margin:0 auto 28px;max-width:52ch}
+.gcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;text-align:left}
+.gcard{padding:26px;border-radius:22px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-family:inherit;font-size:14px;cursor:pointer;transition:.2s;display:flex;flex-direction:column;gap:6px}
+.gcard:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--accent)}
+.gcard.pro{border-color:transparent;background:linear-gradient(var(--panel),var(--panel)) padding-box,linear-gradient(135deg,#b794ff,#ff7ab8) border-box;border:2px solid transparent}
+.gcard h3{margin:4px 0 0;font-size:22px}
+.gcard p{margin:0 0 8px;color:var(--muted)}
+.gcard ul{margin:0 0 10px;padding-left:18px;color:var(--text);flex:1}
+.gcard li{margin-bottom:5px}
+.gcard em{font-style:normal;font-weight:700;color:var(--accent)}
+.gb{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--muted)}
+.gcard.pro .gb{color:#b794ff}
+.fcard{max-width:560px;margin:10px auto 18px;padding:30px;border-radius:22px;border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow);text-align:center}
+.fq{font-size:20px;font-weight:700;margin-bottom:18px}
+.fa{font-size:17px;color:var(--accent);margin-bottom:20px;padding:14px;border-radius:12px;background:var(--panel2)}
+.fbtns{display:flex;gap:12px;justify-content:center}
+.timer{position:sticky;top:68px;z-index:20;display:inline-block;padding:8px 16px;border-radius:99px;background:var(--panel);border:1px solid var(--line);font-weight:800;font-variant-numeric:tabular-nums;margin-bottom:14px;box-shadow:var(--shadow)}
+#cert{display:none}
+@media print{body.pc .top,body.pc .app,body.pc #readbar,body.pc #toTop,body.pc #gate{display:none!important}body.pc #cert{display:block}.certbox{border:8px double #6d2fe0;padding:70px 40px;margin:40px;text-align:center;color:#000;background:#fff}.certk{letter-spacing:.2em;font-size:13px;color:#6d2fe0;margin-bottom:20px}.certbox h1{font-size:40px;margin:10px 0}.certbox h2{font-size:34px;margin:10px 0 20px}}
+#modal{position:fixed;inset:0;z-index:300;display:none;place-items:center;padding:18px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
+#modal.show{display:grid}
+.mbox{position:relative;width:min(440px,100%);max-height:90vh;overflow:auto;padding:28px;border-radius:20px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);animation:pe .3s ease both}
+.mbox h2{margin:0 0 12px;font-size:22px}
+.mclose{position:absolute;top:12px;right:14px;border:0;background:none;color:var(--muted);font-size:26px;cursor:pointer}
+.mbox .search{margin-bottom:10px}
+.mmsg{color:var(--muted)}
+.demo{font-size:12.5px;padding:10px 12px;border-radius:10px;background:color-mix(in srgb,var(--amber) 14%,transparent);color:var(--amber)}
+.err{color:var(--danger);font-size:13px;min-height:18px;margin:6px 0}
+.cons{display:flex;gap:10px;font-size:12.5px;color:var(--muted);margin:6px 0;align-items:flex-start;cursor:pointer}
+.cons input{accent-color:var(--accent);margin-top:3px}
+.alt{font-size:13px;color:var(--muted);margin-top:14px}
+.lnk{color:var(--accent);cursor:pointer;text-decoration:underline}
+.price{font-size:38px;font-weight:800;letter-spacing:-.03em;margin:0 0 8px}
+.price small{font-size:14px;font-weight:500;color:var(--muted)}
+.lockcard{max-width:560px;padding:30px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--panel)),color-mix(in srgb,var(--accent2) 9%,var(--panel)));margin:10px 0}
+.lockcard h2{margin:0 0 10px;font-size:22px}
+.banner{padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:var(--panel);margin-bottom:22px;font-size:14px}
+.disc{color:var(--muted);font-size:12px;margin-top:22px}
+@media(max-width:640px){.mode-pill{padding:6px 10px;font-size:11px}}
+@media print{#modal{display:none!important}}
+</style>
+<script src="config.js"></script>
+</head>
+<body>
+<header class="top">
+  <button class="icon-btn menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  <div class="brand" onclick="go('home')"><div class="logo"></div><div><b>CapCut Academy</b><span>Formation monteur vidéo professionnel</span></div></div>
+  <div class="top-progress"><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><span id="progressLabel">0 %</span></div>
+  <button class="icon-btn" onclick="toggleTheme()" title="Changer de thème" aria-label="Thème">◐</button>
+</header>
+<div class="app">
+  <div class="scrim" onclick="toggleMenu()"></div>
+  <nav class="rail" id="rail"><div id="navList"></div></nav>
+  <main id="main"></main>
+</div>
+
+<script>
+const MODULES = [
+  {id:"m0", num:"01", title:"Prise en main & interface", sub:"Espace de travail, fenêtres, projets", ready:true},
+  {id:"m1", num:"02", title:"Raccourcis & vitesse de travail", sub:"Les gestes du monteur efficace", ready:true},
+  {id:"m2", num:"03", title:"Montage de base : couper, organiser", sub:"Piste, split, trim, ripple", ready:true},
+  {id:"m3", num:"04", title:"Transitions", sub:"Simples, avancées, personnalisées", ready:true},
+  {id:"m4", num:"05", title:"Images clés & animations", sub:"Keyframes, courbes de vitesse", ready:true},
+  {id:"m5", num:"06", title:"Masques & incrustations", sub:"Fond vert, compositing", ready:true},
+  {id:"m6", num:"07", title:"Colorimétrie & rendu ciné", sub:"LUT, courbes, teintes", ready:true},
+  {id:"m7", num:"08", title:"Sound design & mixage", sub:"Égalisation, ducking, ambiances", ready:true},
+  {id:"m8", num:"09", title:"Texte, titrage & sous-titres", sub:"Templates, auto-captions", ready:true},
+  {id:"m9", num:"10", title:"Montage dynamique viral", sub:"Rythme, jump cuts, hook", ready:true},
+  {id:"m10", num:"11", title:"Storytelling & rétention", sub:"Structure narrative courte", ready:true},
+  {id:"m11", num:"12", title:"Formats : YT / Shorts / TikTok", sub:"Cadrages et contraintes plateformes", ready:true},
+  {id:"m12", num:"13", title:"Export & optimisation qualité", sub:"Réglages, codecs, débit", ready:true},
+  {id:"tp", num:"✎", title:"Travaux pratiques", sub:"6 projets complets à réaliser", ready:true},
+  {id:"glossary", num:"★", title:"Lexique du monteur", sub:"Vocabulaire professionnel", ready:true},
+  {id:"shortcuts", num:"★", title:"Bibliothèque de raccourcis", sub:"Référence complète", ready:true},
+];
+
+let done = {};
+try{ done = JSON.parse(localStorage.getItem('cc_academy_done')||'{}'); }catch(e){ done = {}; }
+function saveDone(){ try{ localStorage.setItem('cc_academy_done', JSON.stringify(done)); }catch(e){} }
+function markDone(id){ done[id]=true; saveDone(); renderNav(); updateProgress(); }
+
+function updateProgress(){
+  const total = MODULES.filter(m=>m.id.startsWith('m')).length;
+  const got = MODULES.filter(m=>m.id.startsWith('m') && done[m.id]).length;
+  const pct = total? Math.round(got/total*100):0;
+  document.getElementById('progressFill').style.width = pct+'%';
+  document.getElementById('progressLabel').textContent = pct+' % du programme terminé ('+got+'/'+total+' modules)';
+}
+
+let current = location.hash.replace('#','') || 'home';
+
+function renderNav(){
+  const nav = document.getElementById('navList');
+  nav.innerHTML = MODULES.map(m=>{
+    const cls = ['nav-item'];
+    if(m.id===current) cls.push('active');
+    if(done[m.id]) cls.push('done');
+    if(!m.ready) cls.push('locked');
+    return `<div class="${cls.join(' ')}" data-id="${m.id}" onclick="go('${m.id}')">
+      <div class="num">${done[m.id]?'✓':m.num}</div>
+      <div class="ttl">${m.title}<span class="sub">${m.sub}</span></div>
+    </div>`;
+  }).join('');
+}
+
+function go(id){
+  current = id;
+  location.hash = id;
+  renderNav();
+  renderMain();
+  window.scrollTo({top:0});
+}
+window.addEventListener('hashchange', ()=>{ current = location.hash.replace('#','')||'home'; renderNav(); renderMain(); });
+
+function renderMain(){
+  const main = document.getElementById('main');
+  const mod = MODULES.find(m=>m.id===current) || MODULES[0];
+  if(!mod.ready){
+    main.innerHTML = `<div class="kicker">MODULE ${mod.num}</div><h1 class="page-title">${mod.title}</h1>
+    <p class="lede">${mod.sub}</p>
+    <div class="coming">Ce module fait partie du programme complet mais n'a pas encore été rédigé dans cette première version. Dis-moi lequel développer en priorité et je l'ajoute avec le même niveau de détail que les modules 1 à 3.</div>`;
+    return;
+  }
+  main.innerHTML = CONTENT[mod.id] ? CONTENT[mod.id]() : '<p>Contenu indisponible.</p>';
+  if(mod.id.startsWith('m')){
+    const btnWrap = document.createElement('div');
+    btnWrap.innerHTML = `<button class="btn" onclick="markDone('${mod.id}')">Marquer comme terminé</button>`;
+    main.appendChild(btnWrap);
+  }
+}
+
+const CONTENT = {
+m0: ()=>`
+<div class="kicker">MODULE 01</div>
+<h1 class="page-title">Prise en main & interface CapCut Desktop</h1>
+<p class="lede">Comprendre chaque zone de l'espace de travail avant de monter évite 80 % des erreurs de débutant. On pose ici les fondations.</p>
+
+<section class="block">
+<h2>1. Les quatre zones de l'interface</h2>
+<p>CapCut Desktop est organisé en quatre zones fixes, et comprendre leur rôle respectif est la base de tout workflow efficace :</p>
+<ul>
+<li><b>Le panneau Médias</b> (en haut à gauche) : c'est votre bibliothèque de travail. On y importe les vidéos, photos, sons, textes, autocollants, effets, transitions, filtres et templates.</li>
+<li><b>La fenêtre de prévisualisation</b> (en haut au centre/droite) : affiche le rendu en temps réel à la position du curseur sur la timeline. On y manipule aussi directement les calques (déplacement, rotation, redimensionnement).</li>
+<li><b>Le panneau de réglages</b> (à droite) : contextuel, il change selon l'élément sélectionné (vidéo, texte, audio, effet). C'est ici que se trouvent 90 % des réglages fins.</li>
+<li><b>La timeline</b> (en bas) : le cœur du montage. Chaque piste représente une couche, empilée de bas (arrière-plan) vers le haut (premier plan).</li>
+</ul>
+<div class="card tip"><div class="card-title">Astuce pro</div>Redimensionnez la timeline en tirant la bordure supérieure vers le haut dès que vous travaillez avec plus de 5 pistes : on perd un temps considérable à scroller sur une timeline trop petite.</div>
+</section>
+
+<section class="block">
+<h2>2. Créer et configurer un nouveau projet</h2>
+<h3>Manipulation exacte</h3>
+<p>Depuis l'écran d'accueil : <b>Nouveau projet</b> → nommez-le clairement (convention recommandée : <i>client_format_date</i>, ex. <i>acme_short_0211</i>) → choisissez le dossier de stockage sur un disque rapide (SSD de préférence, jamais un disque réseau pour un projet actif).</p>
+<h3>Réglages de séquence à fixer dès le départ</h3>
+<table>
+<thead><tr><th>Réglage</th><th>Recommandation</th><th>Pourquoi</th></tr></thead>
+<tbody>
+<tr><td>Résolution</td><td>1920×1080 (16:9) ou 1080×1920 (9:16)</td><td>Standard diffusion ; évite les recalculs d'échelle en export</td></tr>
+<tr><td>Fréquence d'images</td><td>Identique au rush source (souvent 30 ou 60 fps)</td><td>Mélanger les fps crée du saccadé ou de l'interpolation artificielle</td></tr>
+<tr><td>Ratio</td><td>Choisi AVANT d'importer les rushs si possible</td><td>Changer le ratio après coup oblige à recadrer chaque clip</td></tr>
+</tbody>
+</table>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Changer le ratio de la séquence en cours de montage déplace et recadre automatiquement tous les éléments déjà positionnés. Toujours valider le format de diffusion avant la première coupe.</div>
+</section>
+
+<section class="block">
+<h2>3. Organiser ses médias avant de monter</h2>
+<p>Un monteur professionnel ne jette jamais ses rushs en vrac dans la timeline. La méthode recommandée :</p>
+<ol>
+<li>Créer des dossiers dans le panneau Médias (clic droit → Nouveau dossier) : <i>Rushs</i>, <i>Musiques</i>, <i>SFX</i>, <i>Graphismes</i>.</li>
+<li>Visionner et trier les rushs en les marquant mentalement (bon / moyen / à jeter) avant tout montage.</li>
+<li>Importer uniquement les musiques et SFX dont vous avez vérifié la licence d'utilisation.</li>
+</ol>
+<div class="exercise">
+<div class="card-title">Exercice pratique</div>
+Créez un nouveau projet au format 9:16, importez 3 vidéos et 1 musique, rangez-les dans des dossiers distincts, puis renommez le projet selon la convention <i>client_format_date</i>. Temps cible : moins de 5 minutes.
+</div>
+</section>
+`,
+m1: ()=>`
+<div class="kicker">MODULE 02</div>
+<h1 class="page-title">Raccourcis & vitesse de travail</h1>
+<p class="lede">Un monteur professionnel monte à la souris le moins possible. Les raccourcis ne sont pas un confort, c'est ce qui différencie un montage de 3 heures d'un montage de 30 minutes.</p>
+
+<section class="block">
+<h2>1. Les raccourcis essentiels de la timeline</h2>
+<table>
+<thead><tr><th>Action</th><th>Raccourci</th><th>Usage</th></tr></thead>
+<tbody>
+<tr><td>Couper (split)</td><td><kbd>Ctrl</kbd> + <kbd>B</kbd></td><td>Coupe le clip sélectionné à la position du curseur</td></tr>
+<tr><td>Supprimer avec fermeture (ripple delete)</td><td><kbd>Suppr</kbd> puis <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Suppr</kbd> selon contexte</td><td>Supprime un segment et referme le trou</td></tr>
+<tr><td>Copier / Coller</td><td><kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd></td><td>Dupliquer un clip ou un réglage d'effet</td></tr>
+<tr><td>Annuler / Rétablir</td><td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td><td>Indispensable en test d'effets</td></tr>
+<tr><td>Zoom timeline</td><td><kbd>Ctrl</kbd> + molette</td><td>Zoomer précisément pour un cut au frame près</td></tr>
+<tr><td>Image précédente / suivante</td><td><kbd>←</kbd> / <kbd>→</kbd></td><td>Navigation frame par frame</td></tr>
+<tr><td>Lecture / Pause</td><td><kbd>Espace</kbd></td><td>Prévisualisation rapide</td></tr>
+</tbody>
+</table>
+<div class="card tip"><div class="card-title">Astuce pro</div>Mappez vos coupes sur <kbd>Ctrl</kbd>+<kbd>B</kbd> en gardant toujours la main gauche sur le clavier (Ctrl, Shift, Z, B) et la main droite sur la souris pour le scrub de la timeline : c'est la position de base de tout monteur rapide.</div>
+</section>
+
+<section class="block">
+<h2>2. Navigation précise image par image</h2>
+<p>Pour un cut parfait (synchro musicale, cut sur le mouvement), ne jamais chercher le point exact à la souris. Utilisez <kbd>←</kbd>/<kbd>→</kbd> pour avancer frame par frame une fois proche du point, puis <kbd>Ctrl</kbd>+<kbd>B</kbd>.</p>
+<h3>Méthode du "zoom progressif"</h3>
+<ol>
+<li>Repérez la zone approximative à l'œil sur la timeline dézoomée.</li>
+<li>Zoomez (<kbd>Ctrl</kbd> + molette) jusqu'à voir les frames individuelles.</li>
+<li>Affinez avec les flèches, puis coupez.</li>
+</ol>
+</section>
+
+<section class="block">
+<h2>3. Automatiser les tâches répétitives</h2>
+<p>Dupliquer un réglage d'effet ou de texte sur plusieurs clips : sélectionnez le clip source réglé → <kbd>Ctrl</kbd>+<kbd>C</kbd> → sélectionnez les clips cibles → clic droit → <i>Coller les attributs</i> (ou raccourci équivalent selon version). Cela évite de recréer un habillage texte manuellement 15 fois.</p>
+<div class="exercise">
+<div class="card-title">Exercice pratique</div>
+Sur une timeline de 5 clips, réalisez 4 coupes uniquement au clavier (sans toucher la souris pour le split), en moins de 90 secondes.
+</div>
+</section>
+`,
+m2: ()=>`
+<div class="kicker">MODULE 03</div>
+<h1 class="page-title">Montage de base : couper, organiser, structurer</h1>
+<p class="lede">Avant les effets, la base de tout montage réussi est une structure de coupe propre. C'est 70 % du travail d'un monteur professionnel, même si c'est la partie la moins visible.</p>
+
+<section class="block">
+<h2>1. Split, Trim et Ripple : bien distinguer les trois</h2>
+<ul>
+<li><b>Split (couper)</b> : <kbd>Ctrl</kbd>+<kbd>B</kbd>. Divise un clip en deux sans rien supprimer. Utilisé pour isoler un passage à traiter séparément (effet, vitesse, suppression).</li>
+<li><b>Trim (ajuster les bords)</b> : on fait glisser le bord gauche ou droit d'un clip directement sur la timeline pour raccourcir ou allonger son point d'entrée/sortie, sans déplacer les autres clips.</li>
+<li><b>Ripple delete (suppression avec fermeture)</b> : supprime un segment ET referme automatiquement le vide créé, en décalant tous les clips suivants vers la gauche. Indispensable pour ne jamais laisser de trous noirs.</li>
+</ul>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Supprimer un clip avec la touche <kbd>Suppr</kbd> simple laisse souvent un espace vide sur la piste (selon le mode actif). Vérifiez toujours visuellement qu'aucun "trou" n'apparaît avant de passer au clip suivant.</div>
+</section>
+
+<section class="block">
+<h2>2. Organiser les pistes comme un professionnel</h2>
+<p>Convention de montage recommandée, de bas en haut :</p>
+<table>
+<thead><tr><th>Piste (bas → haut)</th><th>Contenu</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Vidéo principale (rush A-roll)</td></tr>
+<tr><td>2</td><td>Inserts / B-roll</td></tr>
+<tr><td>3</td><td>Textes & titrages</td></tr>
+<tr><td>4</td><td>Effets visuels / stickers</td></tr>
+<tr><td>Audio 1</td><td>Voix / dialogue</td></tr>
+<tr><td>Audio 2</td><td>Musique</td></tr>
+<tr><td>Audio 3</td><td>SFX ponctuels</td></tr>
+</tbody>
+</table>
+<p>Cette hiérarchie fixe évite de chercher un élément pendant 10 minutes sur un projet complexe, et facilite énormément la relecture par un client ou un collègue.</p>
+</section>
+
+<section class="block">
+<h2>3. Le rythme de coupe : poser les bases avant le "montage dynamique"</h2>
+<p>Avant de chercher des effets viraux (module 10), un monteur doit maîtriser la notion de <i>rythme de coupe</i> : la durée moyenne d'un plan avant la coupe suivante. Un rythme trop lent perd l'attention, un rythme trop rapide (en dessous de 0,5 s sans raison narrative) fatigue l'œil.</p>
+<h3>Repère de départ selon le format</h3>
+<ul>
+<li>Vlog / interview : 3 à 6 secondes par plan en moyenne.</li>
+<li>Contenu TikTok/Shorts dynamique : 1 à 3 secondes par plan.</li>
+<li>Mini-film narratif : variable selon la scène, souvent 2 à 8 secondes.</li>
+</ul>
+<div class="exercise">
+<div class="card-title">Exercice pratique</div>
+Montez une séquence de 20 secondes à partir de 3 clips bruts, en respectant la hiérarchie de pistes du tableau ci-dessus, sans aucun trou visible sur la timeline.
+</div>
+</section>
+
+<section class="block">
+<h2>Quiz — Vérifiez vos acquis</h2>
+<div id="quizArea"></div>
+</section>
+<script>setTimeout(renderQuizM2, 0);<\/script>
+`,
+m3: ()=>`
+<div class="kicker">MODULE 04</div>
+<h1 class="page-title">Transitions : simples, avancées, personnalisées</h1>
+<p class="lede">Une transition doit toujours servir le rythme ou le sens, jamais être un gadget. Un monteur pro en utilise peu, mais choisies avec précision.</p>
+
+<section class="block">
+<h2>1. Les trois familles de transitions</h2>
+<ul>
+<li><b>Transitions natives CapCut</b> (fondu, glissement, zoom, cube...) : accessibles en double-cliquant sur l'icône entre deux clips sur la timeline. Rapides mais reconnaissables — à utiliser avec parcimonie sur du contenu professionnel.</li>
+<li><b>Transitions par le mouvement (match cut)</b> : on aligne un mouvement ou une forme entre le plan A et le plan B (ex. un geste qui se poursuit). Aucune transition logicielle n'est appliquée : c'est le montage lui-même qui crée l'illusion de continuité.</li>
+<li><b>Transitions personnalisées par masque/keyframes</b> : combinaison d'un masque animé (module 06) et d'une courbe de vitesse pour créer une transition unique à l'identité visuelle du projet.</li>
+</ul>
+<div class="card tip"><div class="card-title">Astuce pro</div>Le fondu au noir (fade to black) reste la transition la plus utilisée en production professionnelle : elle signale une rupture temporelle ou de lieu sans détourner l'attention du contenu.</div>
+</section>
+
+<section class="block">
+<h2>2. Manipulation exacte d'une transition native</h2>
+<ol>
+<li>Placez deux clips bout à bout sur la même piste.</li>
+<li>Double-cliquez sur l'icône carrée blanche entre les deux clips.</li>
+<li>Choisissez la catégorie (Fondu, Déplacement, Simple, Spécial, Décor...) et ajustez la durée (0,2 à 1 s recommandé pour un rendu discret).</li>
+</ol>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Appliquer une transition "flashy" (zoom rotatif, glitch) toutes les 3 coupes rend le montage amateur. Réservez les transitions marquées pour des ruptures de séquence volontaires.</div>
+</section>
+
+<section class="block">
+<h2>3. Créer une transition personnalisée</h2>
+<p>Exemple concret : transition "essuyage" directionnelle sans utiliser le preset natif.</p>
+<ol>
+<li>Ajoutez un masque rectangulaire (module 06) sur le clip B, positionné hors cadre à gauche.</li>
+<li>Posez une image clé de position hors cadre à l'instant T, puis une seconde image clé en position centrée à T+0,4s.</li>
+<li>La courbe d'accélération (clic droit sur la keyframe → courbe de vitesse) en "ease-out" rend le mouvement naturel plutôt que mécanique.</li>
+</ol>
+<div class="exercise">
+<div class="card-title">Exercice pratique</div>
+Réalisez un match cut entre deux clips où un même geste (ex. une main qui ferme une porte / ouvre un tiroir) crée la continuité, sans aucune transition logicielle appliquée.
+</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM3"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM3',[
+  {q:"Pourquoi éviter les transitions 'flashy' trop fréquentes ?",opts:[
+    {t:"Elles consomment plus de batterie",ok:false},
+    {t:"Elles détournent l'attention et donnent un rendu amateur si surutilisées",ok:true},
+    {t:"Elles ne fonctionnent que sur mobile",ok:false}],exp:"Une transition doit servir le rythme ou le sens ; surutilisée, elle devient une distraction et un signe de montage amateur."},
+  {q:"Qu'est-ce qu'un match cut ?",opts:[
+    {t:"Une transition logicielle de type fondu",ok:false},
+    {t:"Une continuité créée par l'alignement d'un mouvement entre deux plans, sans effet logiciel",ok:true},
+    {t:"Un raccourci clavier pour couper",ok:false}],exp:"Le match cut crée l'illusion de continuité uniquement par le montage, sans transition appliquée."}
+]),0);<\/script>
+`,
+m4: ()=>`
+<div class="kicker">MODULE 05</div>
+<h1 class="page-title">Images clés & animations (keyframes)</h1>
+<p class="lede">Les keyframes sont le langage universel de l'animation dans tout logiciel de montage. Les maîtriser ouvre toutes les portes : habillages, recadrages dynamiques, effets de zoom, transitions personnalisées.</p>
+
+<section class="block">
+<h2>1. Principe de fonctionnement</h2>
+<p>Une image clé (keyframe) fixe la valeur d'un paramètre (position, échelle, rotation, opacité...) à un instant précis. Entre deux keyframes, CapCut <b>interpole</b> automatiquement la valeur : c'est cette interpolation qui crée le mouvement.</p>
+<h3>Manipulation exacte</h3>
+<ol>
+<li>Sélectionnez le clip ou calque à animer.</li>
+<li>Dans le panneau de réglages, repérez l'icône losange à côté du paramètre (Position, Échelle, Rotation, Opacité).</li>
+<li>Placez le curseur de lecture à l'instant de départ → cliquez sur le losange pour créer la première keyframe.</li>
+<li>Déplacez le curseur à l'instant d'arrivée → modifiez la valeur : une seconde keyframe est créée automatiquement.</li>
+</ol>
+</section>
+
+<section class="block">
+<h2>2. Les courbes de vitesse : la différence entre amateur et pro</h2>
+<p>Une interpolation linéaire par défaut donne un mouvement mécanique et peu naturel. Clic droit sur une keyframe → courbe d'accélération :</p>
+<ul>
+<li><b>Ease-in</b> : démarrage lent, accélération progressive — utile pour une sortie de cadre.</li>
+<li><b>Ease-out</b> : démarrage rapide, ralentissement en fin de mouvement — utile pour une arrivée d'élément à l'écran.</li>
+<li><b>Ease-in-out</b> : le plus naturel pour un mouvement qui démarre et se termine à l'écran (ex. un titre qui apparaît puis se stabilise).</li>
+</ul>
+<div class="card tip"><div class="card-title">Astuce pro</div>Pour un zoom "respiration" discret sur une interview (effet Ken Burns), animez l'échelle de 100% à 106% sur toute la durée du plan avec une courbe linéaire très lente : le mouvement doit être imperceptible consciemment mais garder l'image vivante.</div>
+</section>
+
+<section class="block">
+<h2>3. Exemple concret : habillage de texte animé</h2>
+<ol>
+<li>Texte à l'opacité 0 et position décalée vers le bas à T.</li>
+<li>Keyframe à T+0,3s : opacité 100%, position finale, courbe ease-out.</li>
+<li>Le texte reste stable 2 secondes.</li>
+<li>Keyframe de sortie : opacité 0 avant la coupe suivante, courbe ease-in.</li>
+</ol>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Oublier la keyframe de sortie laisse le texte figé jusqu'à la coupe suivante : visuellement, cela donne l'impression d'un bug plutôt que d'un choix de montage.</div>
+<div class="exercise">
+<div class="card-title">Exercice pratique</div>
+Animez un logo en incrustation : entrée par le bas avec ease-out en 0,3s, maintien statique 2s, sortie vers la droite avec ease-in en 0,3s.
+</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM4"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM4',[
+  {q:"Que fait CapCut entre deux keyframes ?",opts:[
+    {t:"Rien, la valeur ne change qu'au moment exact des keyframes",ok:false},
+    {t:"Il interpole automatiquement la valeur du paramètre",ok:true},
+    {t:"Il supprime automatiquement la première keyframe",ok:false}],exp:"L'interpolation entre deux keyframes est ce qui crée le mouvement animé."},
+  {q:"Quelle courbe choisir pour qu'un élément ralentisse en arrivant à sa position finale ?",opts:[
+    {t:"Ease-in",ok:false},{t:"Ease-out",ok:true},{t:"Linéaire",ok:false}],exp:"Ease-out ralentit en fin de mouvement, idéal pour une arrivée naturelle à l'écran."}
+]),0);<\/script>
+`,
+m5: ()=>`
+<div class="kicker">MODULE 06</div>
+<h1 class="page-title">Masques & incrustations : fond vert et compositing</h1>
+<p class="lede">Le masquage permet d'isoler, combiner et superposer des images. C'est la base technique du fond vert, des transitions personnalisées et des effets de "picture in picture" professionnels.</p>
+
+<section class="block">
+<h2>1. Les types de masques disponibles</h2>
+<ul>
+<li><b>Masque de forme</b> (rectangle, cercle, étoile, cœur, linéaire) : cache une partie du calque selon une forme géométrique, animable en position/taille/rotation/flou de bordure.</li>
+<li><b>Incrustation chroma key (fond vert/bleu)</b> : supprime une couleur spécifique du calque pour laisser transparaître le calque du dessous.</li>
+</ul>
+</section>
+
+<section class="block">
+<h2>2. Chroma key : manipulation exacte et réglages</h2>
+<ol>
+<li>Placez le clip tourné en fond vert sur la piste du dessus, et l'arrière-plan de remplacement sur la piste du dessous.</li>
+<li>Sélectionnez le clip fond vert → panneau Réglages → onglet <i>Chroma Key / Keying</i>.</li>
+<li>Utilisez la pipette pour échantillonner la couleur du fond (vert ou bleu).</li>
+<li>Ajustez <i>Intensité</i> (force de suppression de la couleur) et <i>Tolérance / Ombre</i> (adoucissement des bords) progressivement, en zoomant sur les contours du sujet (cheveux notamment).</li>
+</ol>
+<table>
+<thead><tr><th>Réglage</th><th>Effet si trop élevé</th><th>Effet si trop faible</th></tr></thead>
+<tbody>
+<tr><td>Intensité</td><td>Le sujet devient transparent par endroits (surtout cheveux/peau claire)</td><td>Des résidus verts restent visibles sur les bords</td></tr>
+<tr><td>Tolérance</td><td>Contour flou et imprécis</td><td>Contour dentelé, artificiel</td></tr>
+</tbody>
+</table>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Un fond vert mal éclairé (plis, ombres portées) rend le chroma key quasiment impossible à nettoyer en post-production, même avec les meilleurs réglages. 80% de la qualité d'un chroma key se joue au tournage, pas au montage.</div>
+<div class="card tip"><div class="card-title">Astuce pro</div>Ajoutez un léger flou de bordure (1-2 px) et une désaturation discrète en bordure du sujet détouré : cela évite l'effet "autocollant" où le sujet semble plaqué sur le nouveau fond sans intégration lumineuse.</div>
+</section>
+
+<section class="block">
+<h2>3. Masque de forme animé pour transition ou habillage</h2>
+<p>Exemple concret : révéler un texte progressivement avec un masque linéaire.</p>
+<ol>
+<li>Appliquez un masque linéaire sur le calque de texte, positionné pour cacher tout le texte au départ.</li>
+<li>Keyframe de position du masque à T (texte masqué) et à T+0,5s (texte totalement révélé), courbe ease-out.</li>
+</ol>
+<div class="exercise">
+<div class="card-title">Exercice pratique</div>
+Réalisez une incrustation chroma key complète : sujet sur fond vert + nouvel arrière-plan, avec un nettoyage de bordure propre (sans résidu vert visible en zoomant à 200%).
+</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM5"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM5',[
+  {q:"Quelle est la cause la plus fréquente d'un chroma key raté ?",opts:[
+    {t:"Un mauvais réglage d'intensité uniquement",ok:false},
+    {t:"Un fond vert mal éclairé au tournage",ok:true},
+    {t:"L'utilisation d'un fond bleu plutôt que vert",ok:false}],exp:"Un éclairage inégal du fond vert au tournage rend le nettoyage en post-production très difficile, quels que soient les réglages appliqués ensuite."},
+  {q:"À quoi sert le réglage 'Tolérance / Ombre' en chroma key ?",opts:[
+    {t:"À adoucir et affiner le contour du détourage",ok:true},
+    {t:"À changer la couleur du fond de remplacement",ok:false},
+    {t:"À accélérer l'export",ok:false}],exp:"La tolérance adoucit les bords du détourage ; mal réglée, elle rend le contour flou ou au contraire dentelé."}
+]),0);<\/script>
+`,
+tp: ()=>`
+<div class="kicker">TRAVAUX PRATIQUES</div>
+<h1 class="page-title">6 projets complets pour s'entraîner</h1>
+<p class="lede">Contrairement aux exercices courts de chaque module, ces TP demandent de combiner plusieurs compétences sur un projet complet, comme en situation réelle.</p>
+
+<section class="block">
+<h2>TP 1 — Montage vlog de 60 secondes (niveau débutant)</h2>
+<p><b>Objectif :</b> appliquer les modules 01 à 03 sur un projet réel.</p>
+<p><b>Matériel nécessaire :</b> 4 à 6 clips bruts filmés avec votre téléphone (ou rushs libres de droits), 1 musique libre de droits.</p>
+<ul>
+<li>Créer un projet 9:16, organiser les médias en dossiers.</li>
+<li>Monter une structure de 60 secondes avec hiérarchie de pistes respectée (vidéo / texte / audio voix / musique).</li>
+<li>Aucun trou sur la timeline, rythme de coupe cohérent avec un vlog (3 à 6 s/plan).</li>
+</ul>
+<p><b>Critères de réussite :</b> timeline propre sans trou, pistes organisées selon la convention du module 03, durée finale entre 55 et 65 secondes.</p>
+<p><b>Temps estimé :</b> 45 à 60 minutes.</p>
+</section>
+
+<section class="block">
+<h2>TP 2 — Transition personnalisée + habillage animé (niveau intermédiaire)</h2>
+<p><b>Objectif :</b> combiner les modules 04 et 05.</p>
+<ul>
+<li>Créer un match cut entre deux clips (mouvement continu).</li>
+<li>Créer une transition personnalisée par masque + keyframes entre deux autres clips.</li>
+<li>Ajouter un titre animé en entrée/maintien/sortie avec courbes ease-in/ease-out.</li>
+</ul>
+<p><b>Critères de réussite :</b> aucune transition native utilisée (uniquement masques/keyframes), mouvement du titre fluide et non mécanique.</p>
+<p><b>Temps estimé :</b> 1h à 1h30.</p>
+</section>
+
+<section class="block">
+<h2>TP 3 — Incrustation fond vert (niveau intermédiaire)</h2>
+<p><b>Objectif :</b> appliquer le module 06 sur un cas réel.</p>
+<p><b>Matériel nécessaire :</b> un clip tourné devant un fond vert/bleu (ou une vidéo de stock libre de droits déjà tournée en chroma key), une image ou vidéo d'arrière-plan.</p>
+<ul>
+<li>Détourer le sujet proprement (zoom à 200% pour vérifier les bords, en particulier les cheveux).</li>
+<li>Intégrer le sujet sur le nouvel arrière-plan avec un flou de bordure discret.</li>
+<li>Ajouter un léger habillage (texte ou cadre) qui donne l'impression que le sujet appartient réellement à la scène.</li>
+</ul>
+<p><b>Critères de réussite :</b> aucun résidu de couleur visible en zoomant, intégration crédible entre sujet et arrière-plan.</p>
+<p><b>Temps estimé :</b> 1h.</p>
+</section>
+
+<section class="block">
+<h2>TP 4 — Format court dynamique (niveau avancé)</h2>
+<p><b>Objectif :</b> synthèse de tous les modules disponibles, en condition proche d'un vrai livrable TikTok/Shorts.</p>
+<p><b>Matériel nécessaire :</b> 6 à 10 clips courts, une musique rythmée libre de droits.</p>
+<ul>
+<li>Monter un format 9:16 de 20 à 30 secondes maximum.</li>
+<li>Rythme de coupe rapide (1 à 3 s/plan), synchronisé sur les temps forts de la musique.</li>
+<li>Au moins une transition personnalisée et un titre animé par keyframes.</li>
+<li>Export final selon la checklist du module 13.</li>
+</ul>
+<p><b>Critères de réussite :</b> le montage reste compréhensible et agréable malgré le rythme rapide ; les coupes tombent sur les temps forts audibles de la musique.</p>
+<p><b>Temps estimé :</b> 1h30 à 2h.</p>
+</section>
+
+<section class="block">
+<h2>TP 5 — Étalonnage & mixage d'une scène (niveau avancé)</h2>
+<p><b>Objectif :</b> appliquer les modules 07 et 08.</p>
+<ul>
+<li>Monter 30 secondes de 4 à 6 plans tournés dans des conditions de lumière différentes.</li>
+<li>Corriger chaque plan, puis appliquer un look unique via un calque d'ajustement.</li>
+<li>Mixer voix, musique, ambiance et 3 SFX avec ducking.</li>
+</ul>
+<p><b>Critères de réussite :</b> les plans paraissent tournés au même moment ; la voix reste claire au haut-parleur du téléphone ; aucun dépassement rouge.</p>
+<p><b>Temps estimé :</b> 1h30.</p>
+</section>
+<section class="block">
+<h2>TP 6 — Vidéo complète prête à publier (niveau expert)</h2>
+<p><b>Objectif :</b> synthèse des 13 modules, du hook à l'export.</p>
+<ul>
+<li>Écrire un hook en 3 versions, choisir la meilleure.</li>
+<li>Monter 45 à 60 s avec jump cuts, punch-ins, au moins un speed ramp, sous-titres relus et style unique.</li>
+<li>Étalonner, mixer, vérifier les zones de sécurité 9:16, exporter selon la checklist du module 13.</li>
+</ul>
+<p><b>Critères de réussite :</b> hook clair dès les 3 premières secondes, texte lisible hors zones masquées, export propre vérifié sur téléphone.</p>
+<p><b>Temps estimé :</b> 2 à 3 h.</p>
+</section>
+<footer class="note">Ces TP sont conçus pour être refaits plusieurs fois avec des rushs différents : la répétition sur du contenu varié est ce qui construit le réflexe professionnel, bien plus que la théorie seule.</footer>
+`,
+m6: ()=>`
+<div class="kicker">MODULE 07</div>
+<h1 class="page-title">Colorimétrie & rendu cinématographique</h1>
+<p class="lede">La couleur est ce qui fait qu'une vidéo « sonne pro » avant même qu'on ait écouté le son. Le principe : corriger d'abord, étalonner ensuite.</p>
+<section class="block">
+<h2>1. Corriger avant d'étalonner</h2>
+<p><b>Correction</b> = rendre l'image neutre et cohérente (exposition, blancs, contraste). <b>Étalonnage</b> = donner un style (chaud, froid, ciné). Inverser l'ordre donne des couleurs fausses impossibles à rattraper.</p>
+<h3>Manipulation exacte</h3>
+<p>Sélectionne le clip → panneau Réglages → onglet <i>Ajuster</i> (ou <i>Basique</i> selon la version). Les curseurs se travaillent de haut en bas :</p>
+<table>
+<thead><tr><th>Réglage</th><th>Rôle</th><th>Piège</th></tr></thead>
+<tbody>
+<tr><td>Température / Teinte</td><td>Équilibre des blancs (bleuté ↔ orangé, vert ↔ magenta)</td><td>Régler sur un mur coloré au lieu d'un blanc ou gris neutre</td></tr>
+<tr><td>Exposition</td><td>Luminosité globale</td><td>Brûler les hautes lumières (ciel blanc sans détail)</td></tr>
+<tr><td>Contraste</td><td>Écart clair/sombre</td><td>Trop de contraste écrase les ombres</td></tr>
+<tr><td>Surbrillances / Ombres</td><td>Récupérer le détail des zones claires ou sombres</td><td>Image « plate » si tout est remonté</td></tr>
+<tr><td>Saturation</td><td>Intensité des couleurs</td><td>Peaux oranges fluo au-delà de +15 environ</td></tr>
+</tbody>
+</table>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Monter la saturation pour « faire vivant ». Une image pro est souvent <i>moins</i> saturée qu'un rendu brut de téléphone ; c'est le contraste de teintes qui donne l'impact.</div>
+</section>
+<section class="block">
+<h2>2. Construire un look cinéma</h2>
+<ul>
+<li><b>Teal &amp; orange</b> : ombres tirées vers le bleu-vert, peaux et lumières vers l'orangé (via les courbes/roues de couleurs si ta version les propose, sinon via température + teinte).</li>
+<li><b>Contraste doux</b> en S, ombres légèrement relevées plutôt que noir total.</li>
+<li><b>Finitions discrètes</b> : léger grain, vignettage très faible, bandes noires 2,35:1 (deux rectangles noirs ou un effet de bandes).</li>
+<li><b>LUT</b> : importable dans les réglages d'ajustement (selon la version). Règle d'or : réduire son intensité à 30-60 %, une LUT à 100 % est rarement juste sur tes images.</li>
+</ul>
+<div class="card tip"><div class="card-title">Astuce pro</div>Place ton étalonnage sur un <b>calque d'ajustement</b> (panneau Ajustements) étiré sur toute la séquence : un seul réglage pour tous les plans, donc un rendu parfaitement cohérent. Corrige ensuite plan par plan en dessous.</div>
+<div class="exercise"><div class="card-title">Exercice pratique</div>Prends 3 plans tournés à des heures différentes. Corrige-les pour qu'ils semblent appartenir à la même scène, puis applique un look unique via un calque d'ajustement. Compare avant/après en coupant l'effet.</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM6"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM6',[
+{q:"Quel est le bon ordre de travail ?",opts:[{t:"Étalonner puis corriger",ok:false},{t:"Corriger (neutraliser) puis étalonner (style)",ok:true},{t:"Appliquer une LUT puis ne rien toucher",ok:false}],exp:"On neutralise l'image d'abord ; le style se construit sur une base propre."},
+{q:"Comment obtenir un étalonnage cohérent sur toute une vidéo ?",opts:[{t:"Un calque d'ajustement sur toute la séquence",ok:true},{t:"Augmenter la saturation partout",ok:false},{t:"Utiliser un filtre différent par plan",ok:false}],exp:"Le calque d'ajustement applique un même look à tous les plans en un seul réglage."}
+]),0);<\/script>
+`,
+m7: ()=>`
+<div class="kicker">MODULE 08</div>
+<h1 class="page-title">Sound design & mixage audio</h1>
+<p class="lede">Un spectateur pardonne une image moyenne, jamais un son mauvais. Le mixage consiste à donner à chaque élément sa place, avec la voix en priorité.</p>
+<section class="block">
+<h2>1. Hiérarchie des niveaux</h2>
+<table>
+<thead><tr><th>Élément</th><th>Niveau repère</th><th>Rôle</th></tr></thead>
+<tbody>
+<tr><td>Voix</td><td>Autour de 0 dB, crêtes sous le rouge</td><td>Message principal</td></tr>
+<tr><td>Musique sous la voix</td><td>Environ 15 à 25 dB plus bas</td><td>Émotion, rythme</td></tr>
+<tr><td>Musique sans voix</td><td>Remontée progressive</td><td>Respiration, transitions</td></tr>
+<tr><td>SFX</td><td>Environ 6 à 12 dB sous la voix</td><td>Accents, mouvement</td></tr>
+</tbody>
+</table>
+<p>Ce sont des repères de départ : l'oreille décide. Vérifie toujours au casque ET sur le haut-parleur du téléphone.</p>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Laisser le vumètre atteindre le rouge : le son sature (clipping) et aucune retouche ne le répare. Baisse le volume du clip, ne compense pas à l'export.</div>
+</section>
+<section class="block">
+<h2>2. Nettoyer et équilibrer la voix</h2>
+<ol>
+<li>Sélectionne le clip voix → Réglages → <i>Audio</i> → <i>Basique</i>.</li>
+<li>Active la réduction de bruit et/ou l'amélioration de la voix si ta version les propose (certaines options peuvent être marquées Pro).</li>
+<li>Normalise le volume pour que toutes les prises soient au même niveau.</li>
+<li>Ajoute fondu entrant/sortant (poignées en bord de clip) pour éviter les claquements aux coupes.</li>
+</ol>
+<h3>Ducking : baisser la musique quand on parle</h3>
+<p>Si ta version propose un ducking automatique, active-le sur la musique. Sinon, méthode manuelle fiable : 4 images clés de volume sur la musique (haut → bas juste avant la voix, bas → haut juste après), avec une transition de 0,3 s.</p>
+</section>
+<section class="block">
+<h2>3. SFX et technique J-cut / L-cut</h2>
+<ul>
+<li><b>Trois couches de SFX</b> : ambiance (fond continu), accents (whoosh, impact), détails (pas, clics).</li>
+<li><b>Room tone</b> : comble les silences secs avec une ambiance discrète au lieu d'un vide numérique.</li>
+<li><b>J-cut / L-cut</b> : clic droit sur le clip → séparer l'audio, puis décale l'audio pour qu'il commence avant (J) ou finisse après (L) l'image : les enchaînements paraissent fluides.</li>
+</ul>
+<div class="exercise"><div class="card-title">Exercice pratique</div>Mixe une scène de 20 s avec voix + musique + 3 SFX. La voix doit rester parfaitement intelligible sur le haut-parleur du téléphone, sans que la musique disparaisse.</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM7"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM7',[
+{q:"Que faire quand le vumètre passe au rouge ?",opts:[{t:"Baisser le volume du clip concerné",ok:true},{t:"Ignorer, l'export corrigera",ok:false},{t:"Ajouter plus de musique",ok:false}],exp:"Le clipping est irréversible : il faut baisser le niveau à la source."},
+{q:"Qu'est-ce qu'un L-cut ?",opts:[{t:"Le son se termine après le changement d'image",ok:true},{t:"Le son démarre avant l'image suivante",ok:false},{t:"Une coupe sans son",ok:false}],exp:"Dans un L-cut, l'audio du plan A déborde sur le plan B ; dans un J-cut c'est l'inverse."}
+]),0);<\/script>
+`,
+m8: ()=>`
+<div class="kicker">MODULE 09</div>
+<h1 class="page-title">Texte, titrage & sous-titres</h1>
+<p class="lede">Une majorité de vidéos courtes sont regardées sans le son. Le texte n'est pas décoratif : c'est un second canal de narration.</p>
+<section class="block">
+<h2>1. Les outils de texte</h2>
+<ul>
+<li><b>Texte</b> (panneau Texte) : texte par défaut, effets de texte, modèles.</li>
+<li><b>Légendes</b> : génération automatique à partir de la voix (choix de la langue), saisie manuelle, ou import d'un fichier de sous-titres.</li>
+<li><b>Animations de texte</b> : trois onglets, <i>Entrée</i>, <i>Sortie</i>, <i>Boucle</i>, combinables.</li>
+</ul>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Ne jamais publier des légendes automatiques sans relecture complète : noms propres, termes techniques et mots d'argot sont souvent mal transcrits.</div>
+</section>
+<section class="block">
+<h2>2. Règles de lisibilité</h2>
+<table>
+<thead><tr><th>Règle</th><th>Application</th></tr></thead>
+<tbody>
+<tr><td>Contraste</td><td>Contour ou ombre sur texte clair, ou fond semi-opaque derrière</td></tr>
+<tr><td>Police</td><td>Sans-serif épaisse ; 2 polices maximum par vidéo</td></tr>
+<tr><td>Quantité</td><td>Format court : 3 à 6 mots par apparition, 2 lignes maximum</td></tr>
+<tr><td>Durée</td><td>Compter environ 15 caractères par seconde de lecture</td></tr>
+<tr><td>Position</td><td>En dehors des zones couvertes par l'interface de la plateforme</td></tr>
+</tbody>
+</table>
+<h3>Style « mot par mot »</h3>
+<p>Découpe les légendes pour qu'un mot ou petit groupe apparaisse en rythme avec la voix, et colore le mot clé de chaque phrase. Garde la même couleur d'accent partout : c'est ce qui fait une identité visuelle.</p>
+<div class="card tip"><div class="card-title">Astuce pro</div>Règle ton premier texte (police, taille, contour, animation d'entrée), puis copie-colle-le et modifie seulement le contenu : gain de temps énorme et cohérence parfaite.</div>
+<div class="exercise"><div class="card-title">Exercice pratique</div>Sous-titre 30 s de voix : génération automatique, relecture mot à mot, application d'un style unique, animation d'entrée de 0,2 à 0,3 s, vérification sur écran de téléphone.</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM8"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM8',[
+{q:"Pourquoi relire les légendes automatiques ?",opts:[{t:"Elles contiennent souvent des erreurs sur les noms et termes techniques",ok:true},{t:"Elles sont toujours parfaites",ok:false},{t:"Pour changer la langue de la vidéo",ok:false}],exp:"La transcription automatique se trompe régulièrement ; une faute dans un sous-titre se voit tout de suite."},
+{q:"Combien de polices utiliser au maximum ?",opts:[{t:"Au moins 5 pour varier",ok:false},{t:"2 maximum pour garder une identité cohérente",ok:true},{t:"Une différente par phrase",ok:false}],exp:"Trop de polices donne un rendu amateur ; 2 suffisent (titre + texte courant)."}
+]),0);<\/script>
+`,
+m9: ()=>`
+<div class="kicker">MODULE 10</div>
+<h1 class="page-title">Montage dynamique & techniques virales</h1>
+<p class="lede">Un montage viral n'est pas « plein d'effets » : c'est un rythme maîtrisé où l'œil et l'oreille reçoivent une nouveauté toutes les 2 à 4 secondes.</p>
+<section class="block">
+<h2>1. La boîte à outils du rythme</h2>
+<ul>
+<li><b>Jump cuts</b> : supprime silences, respirations et hésitations en coupant directement dans le plan.</li>
+<li><b>Punch-in</b> : alterne deux cadrages d'un même plan (100 % puis environ 110-120 % d'échelle via image clé ou simple changement d'échelle) pour simuler deux caméras.</li>
+<li><b>Synchro sur la musique</b> : pose des marqueurs sur les temps forts (marqueur manuel, ou détection automatique des rythmes si ta version la propose) et cale tes coupes dessus.</li>
+<li><b>Rampe de vitesse (speed ramp)</b> : panneau Vitesse → <i>Courbe</i> : ralentir sur l'action clé, accélérer avant/après. Des préréglages existent, personnalise les points si besoin.</li>
+<li><b>Image figée</b> : freeze frame pour appuyer un moment, souvent avec texte ou SFX.</li>
+</ul>
+<div class="card tip"><div class="card-title">Astuce pro</div>Chaque coupe visuelle doit avoir un équivalent sonore (whoosh, impact, changement de musique). Image et son qui bougent ensemble donnent la sensation de rythme.</div>
+</section>
+<section class="block">
+<h2>2. Le principe du « pattern interrupt »</h2>
+<p>Pour garder l'attention, change quelque chose toutes les 3 à 5 secondes : cadrage, B-roll, texte, effet sonore, angle. Pas besoin de tout changer à chaque fois, un seul élément suffit.</p>
+<table>
+<thead><tr><th>Technique</th><th>Fréquence conseillée</th><th>Risque si abusé</th></tr></thead>
+<tbody>
+<tr><td>Jump cut</td><td>À chaque phrase</td><td>Montage haché si pas de respiration</td></tr>
+<tr><td>Punch-in</td><td>Une coupe sur deux</td><td>Image pixelisée si trop zoomé</td></tr>
+<tr><td>Speed ramp</td><td>1 à 3 par vidéo</td><td>Effet banalisé</td></tr>
+<tr><td>Glitch / effet flashy</td><td>Très rarement</td><td>Rendu amateur</td></tr>
+</tbody>
+</table>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Empiler les effets pour masquer un contenu faible. Un rythme rapide ne sauve pas un propos vide : le contenu passe d'abord.</div>
+<div class="exercise"><div class="card-title">Exercice pratique</div>Prends une interview de 60 s et réduis-la à 30 s : jump cuts sur chaque silence, 3 punch-ins, 1 speed ramp, SFX sur les changements. Relis à vitesse normale : le message doit rester clair.</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM9"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM9',[
+{q:"À quoi sert un punch-in ?",opts:[{t:"Simuler un changement de caméra pour relancer l'attention",ok:true},{t:"Réduire le poids du fichier",ok:false},{t:"Corriger la couleur",ok:false}],exp:"Alterner deux cadrages d'un même plan donne un effet multi-caméras à moindre coût."},
+{q:"Quelle fréquence pour un speed ramp ?",opts:[{t:"À chaque plan",ok:false},{t:"1 à 3 par vidéo, sur les moments forts",ok:true},{t:"Jamais",ok:false}],exp:"Trop utilisé, l'effet perd son impact ; il doit souligner une action précise."}
+]),0);<\/script>
+`,
+m10: ()=>`
+<div class="kicker">MODULE 11</div>
+<h1 class="page-title">Storytelling & rétention de l'attention</h1>
+<p class="lede">Le meilleur montage technique échoue si le spectateur part à la 3e seconde. Ici, on construit la structure qui retient.</p>
+<section class="block">
+<h2>1. La structure d'une vidéo courte</h2>
+<ol>
+<li><b>Hook (0 à 3 s)</b> : la raison de rester. Pas d'introduction type « Salut, aujourd'hui je vais... ».</li>
+<li><b>Promesse / contexte</b> : ce que le spectateur va obtenir.</li>
+<li><b>Développement</b> : étapes avec tension croissante.</li>
+<li><b>Payoff</b> : la révélation, le résultat.</li>
+<li><b>Fin</b> : appel à l'action, ou boucle vers le début.</li>
+</ol>
+<h3>Quatre types de hook efficaces</h3>
+<ul>
+<li>Le <b>résultat d'abord</b> (montrer le final avant le processus).</li>
+<li>La <b>question</b> qui touche un problème réel.</li>
+<li>L'<b>affirmation inattendue</b> qui contredit une idée reçue.</li>
+<li>L'<b>action immédiate</b> : commencer en plein mouvement.</li>
+</ul>
+<div class="card tip"><div class="card-title">Astuce pro</div>Les boucles ouvertes (« à la fin je te montre pourquoi... ») donnent une raison de regarder jusqu'au bout. Tiens-les : une promesse non tenue détruit la confiance.</div>
+</section>
+<section class="block">
+<h2>2. Lire ses statistiques pour monter mieux</h2>
+<p>La courbe de rétention de ta plateforme (YouTube Studio, statistiques TikTok) montre précisément où les gens partent. Une chute brutale au début = hook faible ; une pente régulière = rythme trop lent ; une chute à un moment précis = séquence à raccourcir ou supprimer.</p>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Garder un passage « parce qu'il a pris du temps à tourner ». Le spectateur ne sait pas ce que ça a coûté : si un plan ne sert pas l'histoire, il part.</div>
+<div class="exercise"><div class="card-title">Exercice pratique</div>Pour une même vidéo, écris 3 hooks différents (résultat d'abord, question, affirmation). Monte les 3 premières secondes de chaque, puis montre-les à 3 personnes : lequel donne envie de continuer ?</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM10"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM10',[
+{q:"Quelle durée vise un bon hook ?",opts:[{t:"Environ 30 secondes d'introduction",ok:false},{t:"Les 3 premières secondes",ok:true},{t:"Aucun, on commence lentement",ok:false}],exp:"L'attention se joue dans les premières secondes : le hook doit être immédiat."},
+{q:"Une chute brutale de rétention au début indique...",opts:[{t:"Un hook faible",ok:true},{t:"Une mauvaise musique de fin",ok:false},{t:"Un problème d'export",ok:false}],exp:"Si les gens partent tout de suite, le début ne donne pas de raison de rester."}
+]),0);<\/script>
+`,
+m11: ()=>`
+<div class="kicker">MODULE 12</div>
+<h1 class="page-title">Formats : YouTube, Shorts, TikTok, Reels</h1>
+<p class="lede">Chaque plateforme a son cadrage, ses zones masquées par l'interface et ses habitudes de visionnage. Monter pour le bon format dès le départ évite de tout refaire.</p>
+<section class="block">
+<h2>1. Les formats de référence</h2>
+<table>
+<thead><tr><th>Usage</th><th>Ratio</th><th>Résolution courante</th></tr></thead>
+<tbody>
+<tr><td>YouTube vidéo classique</td><td>16:9</td><td>1920×1080 (ou 4K si source 4K)</td></tr>
+<tr><td>YouTube Shorts, TikTok, Reels</td><td>9:16</td><td>1080×1920</td></tr>
+<tr><td>Instagram (publication)</td><td>4:5</td><td>1080×1350</td></tr>
+<tr><td>Carré</td><td>1:1</td><td>1080×1080</td></tr>
+</tbody>
+</table>
+<p>Les durées maximales par plateforme évoluent régulièrement : vérifie les limites actuelles sur la plateforme avant de planifier une vidéo longue.</p>
+</section>
+<section class="block">
+<h2>2. Zones de sécurité et adaptation</h2>
+<ul>
+<li>En 9:16, l'interface (description, boutons à droite, barre du bas) masque une partie de l'image : garde textes et visages loin des bords, surtout en bas. Si ton lecteur propose un affichage des zones de sécurité, active-le.</li>
+<li>Pour adapter un projet d'un ratio à l'autre, ton logiciel peut proposer un recadrage automatique selon la version, mais vérifie chaque plan : l'IA ne sait pas toujours ce qui est important dans l'image.</li>
+<li>Tourne si possible plus large que nécessaire : on peut recadrer vers le vertical, pas l'inverse.</li>
+</ul>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Exporter une vidéo 16:9 telle quelle sur TikTok : bandes noires énormes et sujet minuscule. Recadre ou recompose pour la verticalité.</div>
+<div class="exercise"><div class="card-title">Exercice pratique</div>Décline une même séquence de 30 s en 16:9 puis en 9:16 : repositionne le sujet, agrandis les textes, vérifie qu'aucun élément clé ne tombe dans les zones masquées.</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM11"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM11',[
+{q:"Quelle résolution pour un format vertical ?",opts:[{t:"1920×1080",ok:false},{t:"1080×1920",ok:true},{t:"1080×1080",ok:false}],exp:"Le 9:16 vertical se fait en 1080×1920."},
+{q:"Pourquoi éviter les textes en bas d'un 9:16 ?",opts:[{t:"L'interface de la plateforme les recouvre",ok:true},{t:"Ils consomment de la mémoire",ok:false},{t:"CapCut ne le permet pas",ok:false}],exp:"Description, boutons et barre de lecture masquent les bords de l'image."}
+]),0);<\/script>
+`,
+m12: ()=>`
+<div class="kicker">MODULE 13</div>
+<h1 class="page-title">Export & optimisation de la qualité</h1>
+<p class="lede">L'export est la dernière étape et la plus irréversible : un mauvais réglage ruine des heures de travail.</p>
+<section class="block">
+<h2>1. Les réglages d'exportation</h2>
+<table>
+<thead><tr><th>Réglage</th><th>Recommandation</th><th>Pourquoi</th></tr></thead>
+<tbody>
+<tr><td>Résolution</td><td>1080p pour TikTok/Shorts/Reels ; 4K seulement si source 4K</td><td>Monter la résolution au-delà de la source n'ajoute aucun détail</td></tr>
+<tr><td>Fréquence d'images</td><td>Identique au projet et aux rushs</td><td>Évite saccades et interpolation</td></tr>
+<tr><td>Débit (qualité)</td><td>Recommandé, ou plus élevé pour du contenu riche en détails</td><td>Les plateformes recompressent : partir de haute qualité aide</td></tr>
+<tr><td>Codec</td><td>H.264 pour la compatibilité maximale ; HEVC pour des fichiers plus légers</td><td>HEVC est moins lisible sur certains appareils anciens</td></tr>
+<tr><td>Format</td><td>MP4</td><td>Accepté partout</td></tr>
+</tbody>
+</table>
+<p>Certaines options (résolution élevée, fréquences supérieures...) peuvent être réservées à l'offre payante selon ta version : vérifie dans la fenêtre d'export.</p>
+</section>
+<section class="block">
+<h2>2. Checklist avant export</h2>
+<ol>
+<li>Regarde la vidéo en entier une dernière fois, au casque puis au haut-parleur du téléphone.</li>
+<li>Vérifie qu'aucun trou noir ou clip hors place ne reste sur la timeline.</li>
+<li>Contrôle le niveau audio (pas de rouge) et l'orthographe de tous les textes.</li>
+<li>Vérifie qu'aucun élément ajouté automatiquement (clip de fin, filigrane de modèle) n'est resté à la fin.</li>
+<li>Exporte d'abord un extrait de 10 s pour valider qualité et poids.</li>
+<li>Nomme le fichier proprement (ex. <i>client_format_v2.mp4</i>) et sauvegarde le projet.</li>
+</ol>
+<div class="card tip"><div class="card-title">Astuce pro</div>Si ton PC ramait pendant le montage, utilise les clips proxy ou la lecture en basse qualité (selon ta version) pour monter, puis exporte en pleine qualité : l'export utilise toujours les fichiers d'origine.</div>
+<div class="card warn"><div class="card-title">Erreur fréquente</div>Ré-exporter plusieurs fois le même fichier exporté : chaque compression dégrade l'image. Repars toujours du projet, jamais d'un export.</div>
+<div class="exercise"><div class="card-title">Exercice pratique</div>Exporte un même projet avec 3 réglages différents (débit recommandé, plus élevé, codec différent). Compare le poids des fichiers et regarde-les côte à côte : à partir de quand la différence devient-elle invisible ?</div>
+</section>
+<section class="block"><h2>Quiz</h2><div id="quizAreaM12"></div></section>
+<script>setTimeout(()=>renderQuizGeneric('quizAreaM12',[
+{q:"Faut-il exporter en 4K une source filmée en 1080p ?",opts:[{t:"Oui, ça améliore les détails",ok:false},{t:"Non, ça n'ajoute aucun détail réel",ok:true},{t:"Oui, c'est obligatoire pour YouTube",ok:false}],exp:"Augmenter la résolution ne crée pas de détails absents de la source."},
+{q:"Pourquoi exporter un extrait test de 10 s ?",opts:[{t:"Valider qualité et poids avant le long export",ok:true},{t:"Pour tester la connexion internet",ok:false},{t:"C'est inutile",ok:false}],exp:"Un test court évite d'attendre un export complet pour découvrir un mauvais réglage."}
+]),0);<\/script>
+`,
+glossary: ()=>`
+<div class="kicker">RÉFÉRENCE</div>
+<h1 class="page-title">Lexique du monteur professionnel</h1>
+<p class="lede">Le vocabulaire exact permet de communiquer sans ambiguïté avec un client, un réalisateur ou un autre monteur.</p>
+<dl class="glossary">
+<dt>A-roll</dt><dd>Le plan principal, généralement la personne qui parle à la caméra.</dd>
+<dt>B-roll</dt><dd>Plans d'illustration / inserts utilisés pour couvrir une coupe ou enrichir visuellement le propos.</dd>
+<dt>Ripple delete</dt><dd>Suppression d'un segment qui referme automatiquement le vide créé sur la piste.</dd>
+<dt>Keyframe (image clé)</dt><dd>Point fixé dans le temps définissant une valeur (position, taille, opacité...) ; CapCut interpole entre deux keyframes.</dd>
+<dt>J-cut / L-cut</dt><dd>Techniques où le son d'un plan démarre avant (J-cut) ou se termine après (L-cut) le changement d'image, pour fluidifier la transition.</dd>
+<dt>Ducking</dt><dd>Baisse automatique du volume de la musique lorsque la voix est présente.</dd>
+<dt>LUT</dt><dd>Table de correspondance de couleurs appliquée pour donner un rendu colorimétrique spécifique.</dd>
+<dt>Jump cut</dt><dd>Coupe franche entre deux moments proches du même plan, souvent utilisée volontairement dans les formats courts dynamiques.</dd>
+<dt>Chroma key</dt><dd>Technique d'incrustation sur fond vert ou bleu.</dd>
+<dt>Rendu / export</dt><dd>Génération du fichier vidéo final à partir du projet monté.</dd>
+<dt>Étalonnage</dt><dd>Travail de style de la couleur, réalisé après la correction qui neutralise l'image.</dd>
+<dt>Calque d'ajustement</dt><dd>Couche qui applique un réglage de couleur à tout ce qui se trouve en dessous sur la timeline.</dd>
+<dt>Speed ramp</dt><dd>Variation progressive de la vitesse d'un clip (accélération puis ralenti, ou l'inverse).</dd>
+<dt>Punch-in</dt><dd>Zoom sur un plan pour simuler un changement de cadrage ou de caméra.</dd>
+<dt>Hook</dt><dd>Accroche des premières secondes qui donne une raison de continuer à regarder.</dd>
+<dt>Rétention</dt><dd>Part du public qui reste jusqu'à un moment donné de la vidéo.</dd>
+<dt>Pattern interrupt</dt><dd>Changement volontaire (image, son, texte) pour relancer l'attention.</dd>
+<dt>Room tone</dt><dd>Ambiance sonore d'un lieu, utilisée pour combler les silences.</dd>
+<dt>Clipping</dt><dd>Saturation du son lorsque le niveau dépasse le maximum, irréparable après coup.</dd>
+<dt>Débit (bitrate)</dt><dd>Quantité de données par seconde de vidéo ; plus il est élevé, plus l'image est fidèle et le fichier lourd.</dd>
+<dt>Codec</dt><dd>Méthode de compression de la vidéo (H.264, HEVC...).</dd>
+<dt>Zone de sécurité</dt><dd>Partie de l'image non recouverte par l'interface de la plateforme.</dd>
+</dl>
+<p style="color:var(--muted);font-size:13px;">Termes classés dans l'ordre d'apparition dans la formation.</p>
+`,
+shortcuts: ()=>`
+<div class="kicker">RÉFÉRENCE</div>
+<h1 class="page-title">Bibliothèque de raccourcis CapCut Desktop</h1>
+<p class="lede">Référence centralisée — à garder ouverte dans un onglet pendant vos premières semaines de montage.</p>
+<table>
+<thead><tr><th>Catégorie</th><th>Action</th><th>Raccourci</th></tr></thead>
+<tbody>
+<tr><td>Timeline</td><td>Couper (split)</td><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td></tr>
+<tr><td>Timeline</td><td>Zoom timeline</td><td><kbd>Ctrl</kbd> + molette</td></tr>
+<tr><td>Timeline</td><td>Image précédente / suivante</td><td><kbd>←</kbd> / <kbd>→</kbd></td></tr>
+<tr><td>Édition</td><td>Annuler / Rétablir</td><td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td></tr>
+<tr><td>Édition</td><td>Copier / Coller</td><td><kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd></td></tr>
+<tr><td>Lecture</td><td>Lecture / Pause</td><td><kbd>Espace</kbd></td></tr>
+<tr><td>Projet</td><td>Enregistrer</td><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td></tr>
+</tbody>
+</table>
+<p style="color:var(--muted);font-size:13px;">Les raccourcis peuvent varier selon la version de CapCut : vérifie et personnalise-les dans Paramètres › Raccourcis clavier.</p>
+`
+};
+
+function renderQuizM2(){
+  const area = document.getElementById('quizArea');
+  if(!area) return;
+  const qs = [
+    {q:"Quelle est la différence entre Split et Ripple delete ?", opts:[
+      {t:"Split divise sans supprimer, Ripple delete supprime et referme le vide", ok:true},
+      {t:"Ce sont deux noms pour la même action", ok:false},
+      {t:"Split referme le vide, Ripple delete non", ok:false}],
+      exp:"Split (Ctrl+B) divise un clip en deux. Ripple delete supprime un segment et referme automatiquement le trou en décalant les clips suivants."},
+    {q:"Sur quelle piste place-t-on habituellement la musique selon la convention recommandée ?", opts:[
+      {t:"Piste 1 (vidéo principale)", ok:false},
+      {t:"Audio 2", ok:true},
+      {t:"Piste 4 (effets visuels)", ok:false}],
+      exp:"La convention recommandée place la voix en Audio 1, la musique en Audio 2 et les SFX en Audio 3."},
+  ];
+  area.innerHTML = qs.map((item,i)=>`
+    <div class="quiz-q" data-qi="${i}">
+      <div><b>${i+1}. ${item.q}</b></div>
+      <div class="quiz-opts">
+        ${item.opts.map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${o.t}</label>`).join('')}
+      </div>
+      <div class="quiz-result" id="res${i}"></div>
+    </div>`).join('') + `<button class="btn" onclick="checkQuiz()">Valider mes réponses</button>`;
+
+  window._quizData = qs;
+}
+function checkQuiz(){
+  const qs = window._quizData;
+  qs.forEach((item,i)=>{
+    const checked = document.querySelector('input[name="q'+i+'"]:checked');
+    const labels = document.querySelectorAll('.quiz-q[data-qi="'+i+'"] .quiz-opts label');
+    labels.forEach((lab,j)=>{
+      lab.classList.remove('correct','wrong');
+      if(item.opts[j].ok) lab.classList.add('correct');
+      else if(checked && parseInt(checked.value)===j) lab.classList.add('wrong');
+    });
+    const res = document.getElementById('res'+i);
+    res.style.display='block';
+    res.textContent = (checked && item.opts[parseInt(checked.value)].ok ? "✓ Exact — " : "✗ — ") + item.exp;
+  });
+}
+
+function renderQuizGeneric(containerId, qs){
+  const area = document.getElementById(containerId);
+  if(!area) return;
+  area.innerHTML = qs.map((item,i)=>`
+    <div class="quiz-q" data-gqi="${i}">
+      <div><b>${i+1}. ${item.q}</b></div>
+      <div class="quiz-opts">
+        ${item.opts.map((o,j)=>`<label><input type="radio" name="${containerId}_q${i}" value="${j}"> ${o.t}</label>`).join('')}
+      </div>
+      <div class="quiz-result" id="${containerId}_res${i}"></div>
+    </div>`).join('') + `<button class="btn" onclick="checkQuizGeneric('${containerId}')">Valider mes réponses</button>`;
+  area._data = qs;
+}
+function checkQuizGeneric(containerId){
+  const area = document.getElementById(containerId);
+  const qs = area._data;
+  qs.forEach((item,i)=>{
+    const checked = document.querySelector('input[name="'+containerId+'_q'+i+'"]:checked');
+    const labels = document.querySelectorAll('.quiz-q[data-gqi="'+i+'"] .quiz-opts label');
+    labels.forEach((lab,j)=>{
+      lab.classList.remove('correct','wrong');
+      if(item.opts[j].ok) lab.classList.add('correct');
+      else if(checked && parseInt(checked.value)===j) lab.classList.add('wrong');
+    });
+    const res = document.getElementById(containerId+'_res'+i);
+    res.style.display='block';
+    res.textContent = (checked && item.opts[parseInt(checked.value)].ok ? "✓ Exact — " : "✗ — ") + item.exp;
+  });
+}
+
+/* ===== Interface v2 ===== */
+const META={m0:["Débutant","15 min"],m1:["Débutant","15 min"],m2:["Débutant","25 min"],m3:["Intermédiaire","25 min"],m4:["Intermédiaire","30 min"],m5:["Intermédiaire","35 min"],m6:["Intermédiaire","30 min"],m7:["Intermédiaire","30 min"],m8:["Débutant","25 min"],m9:["Avancé","35 min"],m10:["Avancé","30 min"],m11:["Intermédiaire","25 min"],m12:["Intermédiaire","25 min"]};
+let theme; try{theme=localStorage.getItem('cc_theme');}catch(e){}
+if(!theme) theme=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';
+document.documentElement.setAttribute('data-theme',theme);
+function toggleTheme(){theme=theme==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',theme);try{localStorage.setItem('cc_theme',theme);}catch(e){}}
+function toggleMenu(){document.body.classList.toggle('menu-open');}
+
+function updateProgress(){
+  const mods=MODULES.filter(m=>m.id[0]==='m');
+  const got=mods.filter(m=>done[m.id]).length, pct=Math.round(got/mods.length*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  const l=document.getElementById('progressLabel'); l.textContent=pct+' %'; l.title=got+'/'+mods.length+' modules terminés';
+}
+function renderNav(){
+  const groups=[["Parcours",m=>m.id[0]==='m'],["Pratique",m=>m.id==='tp'||m.id==='exam'],["Pro",m=>m.pro],["Références",m=>m.id==='glossary'||m.id==='shortcuts'||m.id==='fiches']];
+  const item=(id,num,title,sub,ready)=>`<div class="nav-item ${id===current?'active':''} ${done[id]?'done':''} ${ready?'':'locked'}" onclick="go('${id}')"><span class="num">${done[id]?'✓':num}</span><span class="ttl">${title}<small>${sub}</small></span>${ready?'':'<em class="soon">Bientôt</em>'}</div>`;
+  let h=item('home','⌂','Accueil','Vue d\'ensemble',true);
+  groups.forEach(([t,f])=>{h+=`<div class="nav-title">${t}</div>`+MODULES.filter(m=>f(m)&&(!m.pro||MODE==='pro')).map(m=>item(m.id,m.num,m.title,m.sub,m.ready)).join('');});
+  document.getElementById('navList').innerHTML=h;
+}
+function go(id){
+  if(location.hash.replace('#','')===id){current=id;renderNav();renderMain();}else{location.hash=id;}
+}
+function toggleDone(id){if(done[id])delete done[id];else done[id]=true;saveDone();renderNav();updateProgress();renderMain();}
+function pagerHtml(id){
+  const list=MODULES.filter(m=>m.ready&&(!m.pro||MODE==='pro')),i=list.findIndex(m=>m.id===id),p=list[i-1],n=list[i+1];
+  return `<div class="pager">${p?`<a onclick="go('${p.id}')"><small>← Précédent</small>${p.title}</a>`:'<span></span>'}${n?`<a class="next" onclick="go('${n.id}')"><small>Suivant →</small>${n.title}</a>`:'<span></span>'}</div>`;
+}
+function renderHome(){
+  const mods=MODULES.filter(m=>m.id[0]==='m'),ready=mods.filter(m=>m.ready).length,fin=mods.filter(m=>done[m.id]).length;
+  const next=mods.find(m=>m.ready&&!done[m.id])||mods[0];
+  const cards=MODULES.filter(m=>!m.pro||MODE==='pro').map(m=>`<div class="mcard ${m.ready?'':'locked'} ${done[m.id]?'done':''}" onclick="go('${m.id}')"><span class="st">${done[m.id]?'✓ Terminé':m.ready?'Disponible':'Bientôt'}</span><div class="n">${m.id[0]==='m'?'MODULE '+m.num:'BONUS'}</div><h3>${m.title}</h3><p>${m.sub}</p></div>`).join('');
+  return `<div class="hero"><span class="kicker">FORMATION COMPLÈTE · CAPCUT DESKTOP</span><h1 class="page-title">Devenez monteur vidéo professionnel</h1><p class="lede">Un parcours structuré en modules avec exercices, quiz corrigés, exemples concrets et travaux pratiques, pour passer des bases aux techniques avancées de montage.</p><button class="btn" onclick="go('${next.id}')">${fin?'Reprendre la formation':'Commencer la formation'}</button></div>
+  <div class="stats"><div class="stat"><b>${ready}/${mods.length}</b><span>modules disponibles</span></div><div class="stat"><b>${fin}</b><span>modules terminés</span></div><div class="stat"><b>6</b><span>travaux pratiques</span></div><div class="stat"><b>25</b><span>quiz corrigés</span></div></div>
+  <div class="grid">${cards}</div>`;
+}
+function renderMain(){
+  const main=document.getElementById('main'); document.body.classList.remove('menu-open');
+  const mod=MODULES.find(m=>m.id===current);
+  if(!mod){current='home';renderNav();main.innerHTML=renderHome();window.scrollTo(0,0);return;}
+  if(!mod.ready){
+    main.innerHTML=`<span class="kicker">MODULE ${mod.num}</span><h1 class="page-title">${mod.title}</h1><p class="lede">${mod.sub}</p><div class="coming">Ce module est prévu au programme mais n'est pas encore rédigé dans cette version.</div>`+`<div class="actions">${pagerHtml(mod.id)}</div>`;
+    window.scrollTo(0,0);return;
+  }
+  main.innerHTML=CONTENT[mod.id]();
+  main.querySelectorAll('script').forEach(s=>{const n=document.createElement('script');n.textContent=s.textContent;s.replaceWith(n);});
+  const lede=main.querySelector('.lede'),mt=META[mod.id];
+  if(lede&&mt) lede.insertAdjacentHTML('afterend',`<div class="meta"><span class="chip">Niveau <b>${mt[0]}</b></span><span class="chip">Durée <b>${mt[1]}</b></span><span class="chip"><b>Exercices</b> + quiz corrigé</span></div>`);
+  else if(lede) lede.insertAdjacentHTML('afterend','<div class="meta"></div>');
+  const dn=mod.id[0]==='m'?`<button class="btn ${done[mod.id]?'ghost':''}" onclick="toggleDone('${mod.id}')">${done[mod.id]?'✓ Module terminé (annuler)':'Marquer comme terminé'}</button>`:'';
+  main.insertAdjacentHTML('beforeend',`<div class="actions">${dn}${pagerHtml(mod.id)}</div>`);
+  window.scrollTo(0,0);
+}
+function scoreBlock(area,got,total){
+  let s=area.querySelector('.score'); if(!s){s=document.createElement('div');s.className='score';area.appendChild(s);}
+  s.textContent='Score : '+got+' / '+total+(got===total?' — Parfait !':got>=total/2?' — Bien, relis les points manqués.':' — Relis le module puis réessaie.');
+}
+function checkQuizGeneric(cid){
+  const area=document.getElementById(cid),qs=area._data;let got=0;
+  qs.forEach((it,i)=>{
+    const c=document.querySelector('input[name="'+cid+'_q'+i+'"]:checked');
+    document.querySelectorAll('#'+cid+' .quiz-q[data-gqi="'+i+'"] .quiz-opts label').forEach((lab,j)=>{lab.classList.remove('correct','wrong');if(it.opts[j].ok)lab.classList.add('correct');else if(c&&+c.value===j)lab.classList.add('wrong');});
+    const ok=c&&it.opts[+c.value].ok; if(ok)got++;
+    const r=document.getElementById(cid+'_res'+i);r.style.display='block';r.textContent=(ok?'✓ Exact — ':'✗ — ')+it.exp;
+  });
+  scoreBlock(area,got,qs.length);
+}
+function checkQuiz(){
+  const qs=window._quizData,area=document.getElementById('quizArea');let got=0;
+  qs.forEach((it,i)=>{
+    const c=document.querySelector('input[name="q'+i+'"]:checked');
+    document.querySelectorAll('.quiz-q[data-qi="'+i+'"] .quiz-opts label').forEach((lab,j)=>{lab.classList.remove('correct','wrong');if(it.opts[j].ok)lab.classList.add('correct');else if(c&&+c.value===j)lab.classList.add('wrong');});
+    const ok=c&&it.opts[+c.value].ok; if(ok)got++;
+    const r=document.getElementById('res'+i);r.style.display='block';r.textContent=(ok?'✓ Exact — ':'✗ — ')+it.exp;
+  });
+  scoreBlock(area,got,qs.length);
+}
+current=MODULES.find(m=>m.id===current)?current:'home';
+
+/* ===== Approfondissements + examen final ===== */
+const DEEP={
+m0:["Tu reçois 40 rushs en vrac pour une vidéo de 60 s. Méthode : 1) crée les dossiers Rushs / Musiques / SFX ; 2) visionne vite et ne garde que 8 à 10 plans ; 3) importe uniquement ceux-là ; 4) valide ratio et fréquence d'images avant la première coupe ; 5) enregistre en versions (v1, v2). Objectif : une timeline propre en moins de 20 minutes, avant le moindre effet.",["Je sais nommer les 4 zones de l'interface","Je choisis ratio et fréquence d'images avant de monter","Je range mes médias dans des dossiers","Je sauvegarde mes projets avec des versions"],"Prépare un projet modèle vide (dossiers + convention de nom) à réutiliser pour tous tes montages."],
+m1:["Dialogue de 2 minutes à nettoyer en 15 minutes. 1) Écoute tout sans toucher ; 2) première passe : uniquement des coupes au clavier sur chaque hésitation ; 3) deuxième passe : suppression des segments avec fermeture des vides ; 4) zoom de la timeline pour affiner au cadre près ; 5) réécoute complète.",["Je coupe sans la souris","J'affine les coupes image par image","Je supprime avec fermeture des vides","Je copie les réglages au lieu de les refaire"],"Chronomètre-toi sur 10 coupes + suppressions d'un clip d'une minute. Refais-le 3 fois : vise de diviser ton temps par deux."],
+m2:["Interview à 3 plans (A-roll face caméra + B-roll). Pour masquer un jump cut, pose un B-roll de 2 s sur la piste du dessus, sans toucher à la piste de la voix : le son reste continu, l'œil change. Vérifie que le B-roll illustre vraiment la phrase prononcée.",["Je distingue split, trim et suppression avec fermeture","Je respecte la hiérarchie de pistes","Je couvre mes coupes avec du B-roll","Je n'ai aucun trou sur la timeline"],"Monte 45 s d'interview où chaque coupe est masquée par un B-roll ou un changement d'échelle."],
+m3:["Changement de lieu : fondu au noir de 0,5 s, avec l'ambiance sonore du lieu suivant qui démarre avant l'image (L-cut). Changement par action : coupe sur un mouvement (porte qui s'ouvre, geste de la main) en gardant la même direction dans les deux plans.",["Je choisis une transition pour une raison précise","Je sais faire un match cut","Je règle la durée entre 0,2 et 1 s","Je n'abuse pas des transitions flashy"],"Crée 3 transitions différentes entre les mêmes 2 clips (fondu, match cut, masque animé) et garde la plus discrète."],
+m4:["Zoom d'insistance : échelle 100 % → 112 % sur 3 s, courbe ease-in-out. Titre : entrée en 0,3 s (ease-out), maintien, sortie. Deux images clés suffisent pour un mouvement ; n'en ajoute une troisième que pour un petit rebond. Vérifie toujours en lecture, pas seulement à l'arrêt.",["Je pose et déplace des images clés","Je choisis la bonne courbe de vitesse","J'anime l'entrée ET la sortie d'un élément","Je vérifie le mouvement en lecture"],"Anime un titre avec rebond léger : échelle 0 % → 110 % → 100 % en 3 images clés."],
+m5:["Texte derrière le sujet : duplique le clip sur la piste du dessus, isole le sujet (masque dessiné, ou outil de détourage automatique si ta version le propose), puis place le texte entre les deux couches. Zoome à 200 % pour vérifier les bords, en particulier les cheveux et les mains.",["Je sais appliquer et animer un masque","Je règle intensité et tolérance du chroma key","Je vérifie les bords à 200 %","J'intègre le sujet avec un léger flou de bordure"],"Réalise l'effet « texte derrière le sujet » avec des bords propres à 200 %."],
+m6:["Trois plans (intérieur chaud, extérieur froid, écran) à unifier. 1) Corrige l'exposition de chaque plan ; 2) aligne la température sur une zone blanche ou grise de référence ; 3) copie les réglages entre plans similaires ; 4) ajoute le look sur un calque d'ajustement ; 5) LUT éventuelle à 30-60 %.",["Je corrige avant d'étalonner","Je vérifie les peaux (naturelles, pas orangées)","J'utilise un calque d'ajustement","Je réduis l'intensité des LUT"],"Fais un avant/après en écran partagé (masque) et vérifie que les peaux restent naturelles."],
+m7:["Podcast vidéo de 3 min : amène les deux voix au même niveau ; réduction de bruit prudente (trop forte, la voix devient métallique) ; musique environ 20 dB sous la voix avec ducking ; fondu de 1 s en fin. Écoute au casque et au haut-parleur du téléphone.",["Je règle les niveaux de chaque couche","Je nettoie la voix sans la dénaturer","Je gère le ducking","J'évite tout dépassement rouge"],"Réduis le bruit d'une prise sans rendre la voix robotique : cherche le réglage où le bruit baisse mais le timbre reste naturel."],
+m8:["Vidéo de 45 s : légendes automatiques, relecture complète, découpe en groupes de 3 à 5 mots, couleur d'accent sur le mot clé, même animation d'entrée de 0,2 s partout, vérification à l'échelle d'un téléphone et hors zones masquées.",["Je relis toujours les légendes automatiques","J'utilise 2 polices maximum","Mon texte est lisible sur fond clair et foncé","Je reste hors des zones masquées"],"Fais regarder ta vidéo sans le son à quelqu'un : si le message passe, ton texte fait son travail."],
+m9:["Tutoriel de 60 s à ramener à 30 s : supprime tout ce qui précède l'action ; B-roll toutes les 3-4 s ; texte clé à l'écran ; rampe de vitesse sur la révélation ; un effet sonore par changement visuel. Relis à vitesse normale : le sens doit rester clair.",["Je supprime silences et hésitations","Je varie les cadrages (punch-in)","Je cale mes coupes sur la musique","Je limite les effets flashy"],"Fais deux versions (lente et rapide) d'un même contenu : laquelle garde le mieux le sens ?"],
+m10:["Ouverture d'une vidéo recette. Version faible : « Salut, aujourd'hui je vous montre une recette ». Version forte : plan du plat fini + « Dix minutes, et personne ne devine l'ingrédient secret », puis boucle ouverte tenue jusqu'à la fin. Compare la rétention des deux versions.",["Mon hook tient en 3 secondes","Je tiens mes promesses de fin","Je lis ma courbe de rétention","Je coupe les passages qui n'aident pas l'histoire"],"Écris 5 hooks pour un même sujet, classe-les, puis monte les 2 meilleurs et compare."],
+m11:["Un vlog 16:9 à transformer en Short : choisis les 40 s les plus forts, recadre en vertical, agrandis les textes, place les sous-titres hors des zones masquées, écris un hook neuf, exporte en 1080×1920.",["Je connais les ratios et résolutions","Je garde textes et visages dans la zone sûre","Je recompose au lieu d'étirer ou d'ajouter des bandes","Je vérifie les limites de durée actuelles"],"Décline un contenu en 3 formats (16:9, 9:16, 4:5) et note ce qui change vraiment."],
+m12:["Livraison pour un client : export de contrôle de 10 s ; export final en MP4 H.264 ; visionnage sur téléphone et ordinateur ; nom de fichier propre ; archive du projet avec ses médias. Ne repars jamais d'un fichier déjà exporté.",["Je règle résolution, fréquence, débit et codec","J'exporte un test court avant l'export final","Je vérifie l'absence d'éléments ajoutés à la fin","J'archive projet et médias"],"Crée ta checklist d'export personnelle (10 points) et utilise-la sur tes 5 prochains exports."]
+};
+let checks={}; try{checks=JSON.parse(localStorage.getItem('cc_checks')||'{}');}catch(e){}
+function toggleCheck(el){checks[el.dataset.k]=el.checked;try{localStorage.setItem('cc_checks',JSON.stringify(checks));}catch(e){}}
+function deepHtml(id){
+  const d=DEEP[id]; if(!d) return '';
+  return `<section class="block"><h2>Pour aller plus loin</h2><div class="card"><div class="card-title" style="color:var(--accent2)">Cas d'étude</div>${d[0]}</div><h3>Checklist de maîtrise</h3><div class="checklist">${d[1].map((t,i)=>`<label><input type="checkbox" data-k="${id}_${i}" ${checks[id+'_'+i]?'checked':''} onchange="toggleCheck(this)"> ${t}</label>`).join('')}</div><div class="exercise"><div class="card-title">Défi</div>${d[2]}</div></section>`;
+}
+const EXAM=[
+["Quelle zone affiche le rendu en temps réel ?",["La timeline","La fenêtre de prévisualisation","Le panneau Médias"],1,"La prévisualisation montre l'image à la position du curseur."],
+["Quel raccourci coupe un clip au curseur ?",["Ctrl+B","Ctrl+X","Ctrl+K"],0,"Ctrl+B réalise le split."],
+["Que fait une suppression avec fermeture (ripple delete) ?",["Supprime et referme le vide","Supprime en laissant un trou","Duplique le clip"],0,"Les clips suivants se décalent pour combler le vide."],
+["Sur quelle piste place-t-on la musique dans la convention proposée ?",["Audio 2","Piste vidéo 1","Audio 1"],0,"Voix en Audio 1, musique en Audio 2, SFX en Audio 3."],
+["Quelle transition signale discrètement un changement de lieu ?",["Cube rotatif","Fondu au noir","Glitch"],1,"Le fondu au noir est sobre et universel."],
+["Qu'est-ce qu'un match cut ?",["Un raccourci clavier","Une continuité créée par un mouvement ou une forme commune","Un effet de couleur"],1,"La continuité vient du montage, sans effet appliqué."],
+["Que fait CapCut entre deux images clés ?",["Rien","Il interpole la valeur","Il supprime l'image clé"],1,"L'interpolation crée le mouvement."],
+["Quelle courbe ralentit un élément en fin de mouvement ?",["Ease-out","Ease-in","Aucune"],0,"Ease-out ralentit à l'arrivée."],
+["Quelle est la cause la plus fréquente d'un chroma key raté ?",["Un fond mal éclairé","Une musique trop forte","Un export trop long"],0,"L'éclairage du fond se joue au tournage."],
+["Que fait un masque de forme ?",["Cache une partie du calque selon une forme","Change la musique","Augmente la résolution"],0,"Il délimite la zone visible du calque."],
+["Quel est le bon ordre ?",["Étalonner puis corriger","Corriger puis étalonner","Aucun ordre"],1,"On neutralise l'image avant de lui donner un style."],
+["À quelle intensité utiliser généralement une LUT ?",["Toujours 100 %","Réduite, environ 30-60 %","0 %"],1,"Une LUT à pleine puissance est rarement juste."],
+["Que faire de la musique quand une voix parle ?",["La monter","La baisser nettement","La couper définitivement"],1,"La voix doit rester prioritaire."],
+["Peut-on réparer un son qui sature (clipping) à l'export ?",["Oui, facilement","Non, il faut baisser le niveau à la source","Oui avec un filtre"],1,"Le clipping est irréversible."],
+["Que faut-il faire des légendes automatiques ?",["Les publier telles quelles","Les relire intégralement","Les supprimer"],1,"Les erreurs de transcription sont fréquentes."],
+["Combien de mots par apparition en format court ?",["3 à 6","15 à 20","1 seul toujours"],0,"Court et lisible."],
+["Un pattern interrupt consiste à...",["Changer un élément (image, son, texte) toutes les 3-5 s","Couper le son","Ralentir le rythme"],0,"Il relance l'attention."],
+["Quelle durée pour un hook efficace ?",["Les 3 premières secondes","30 secondes","La fin de la vidéo"],0,"L'attention se joue d'emblée."],
+["Quelle résolution pour un format vertical ?",["1920×1080","1080×1920","1280×720"],1,"Le 9:16 se fait en 1080×1920."],
+["Exporter en 4K une source 1080p...",["Ajoute des détails","N'ajoute aucun détail réel","Est obligatoire"],1,"Aucune information nouvelle n'est créée."]
+];
+CONTENT.exam=()=>`<div class="kicker">ÉVALUATION</div><h1 class="page-title">Examen final</h1><p class="lede">20 questions couvrant tout le programme. Il faut 14 bonnes réponses (70 %) pour réussir. Tu peux le repasser autant de fois que tu veux.</p><div class="meta"></div><div id="examBest"></div><div id="examArea"></div>`;
+function renderExam(){
+  let best=null; try{best=localStorage.getItem('cc_exam_best');}catch(e){}
+  document.getElementById('examBest').innerHTML=best!==null?`<div class="card"><div class="card-title" style="color:var(--accent)">Meilleur score</div>${best} / 20</div>`:'';
+  document.getElementById('examArea').innerHTML=EXAM.map((q,i)=>`<div class="quiz-q" data-ei="${i}"><div><b>${i+1}. ${q[0]}</b></div><div class="quiz-opts">${q[1].map((o,j)=>`<label><input type="radio" name="ex${i}" value="${j}"> ${o}</label>`).join('')}</div><div class="quiz-result" id="exr${i}"></div></div>`).join('')+`<button class="btn" onclick="checkExam()">Corriger l'examen</button><div id="examScore"></div>`;
+}
+function checkExam(){
+  let got=0;
+  EXAM.forEach((q,i)=>{
+    const c=document.querySelector('input[name="ex'+i+'"]:checked');
+    document.querySelectorAll('.quiz-q[data-ei="'+i+'"] .quiz-opts label').forEach((l,j)=>{l.classList.remove('correct','wrong');if(j===q[2])l.classList.add('correct');else if(c&&+c.value===j)l.classList.add('wrong');});
+    const ok=c&&+c.value===q[2]; if(ok)got++;
+    const r=document.getElementById('exr'+i);r.style.display='block';r.textContent=(ok?'✓ ':'✗ ')+q[3];
+  });
+  let best=0; try{best=+(localStorage.getItem('cc_exam_best')||0);if(got>best){localStorage.setItem('cc_exam_best',got);best=got;}}catch(e){}
+  const msg=got>=14?'Réussi — bravo, tu maîtrises les fondamentaux du programme.':got>=10?'Presque : reprends les modules des questions manquées puis réessaie.':'À retravailler : relis les modules et refais les quiz avant de retenter.';
+  const el=document.getElementById('examScore');el.className='score';el.textContent='Score : '+got+' / 20 — '+msg;
+  document.getElementById('examBest').innerHTML='<div class="card"><div class="card-title" style="color:var(--accent)">Meilleur score</div>'+best+' / 20</div>';
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+MODULES.splice(MODULES.findIndex(m=>m.id==='glossary'),0,{id:"exam",num:"◆",title:"Examen final",sub:"20 questions · 70 % pour réussir",ready:true});
+const _rm=renderMain;
+renderMain=function(){
+  _rm();
+  const a=document.querySelector('#main .actions');
+  if(a&&DEEP[current]) a.insertAdjacentHTML('beforebegin',deepHtml(current));
+  if(current==='exam') renderExam();
+};
+
+/* ===== Mise en page v3, quiz approfondis, dépannage, fiches ===== */
+const QX={
+m0:[["Pourquoi choisir le ratio avant de monter ?",["Changer ensuite recadre automatiquement les éléments déjà placés","Pour accélérer l'export","Parce que CapCut l'impose"],0,"Un changement de ratio en cours de route déplace et recadre les éléments."],["Quelle zone change selon l'élément sélectionné ?",["Le panneau de réglages","La bibliothèque de médias","La timeline"],0,"Le panneau de réglages est contextuel."],["Où stocker un projet actif de préférence ?",["Un disque rapide local (SSD)","Un disque réseau","Une clé USB lente"],0,"Un support rapide et local évite saccades et pertes."]],
+m1:[["Comment obtenir une coupe précise au cadre ?",["Zoomer la timeline puis avancer image par image","Couper à vue sans zoom","Couper au hasard"],0,"Zoom + flèches donnent la précision."],["Comment répliquer un réglage sur plusieurs clips ?",["Copier le clip réglé puis coller ses attributs","Tout refaire à la main","Exporter et réimporter"],0,"Le collage d'attributs évite les répétitions (nom du menu selon la version)."],["À quoi sert Ctrl+Z ?",["Annuler la dernière action","Couper un clip","Zoomer"],0,"Annuler permet de tester sans risque."]],
+m2:[["Que laisse souvent une suppression sans fermeture ?",["Un vide sur la piste","Rien","Une transition"],0,"Un trou noir apparaît à la lecture."],["Quel rythme de départ pour un vlog parlé ?",["3 à 6 s par plan","0,2 s par plan","30 s par plan"],0,"Repère courant pour du contenu parlé."],["Pourquoi une hiérarchie de pistes fixe ?",["Retrouver vite chaque élément et faciliter la relecture","Réduire le poids du fichier","Accélérer l'export"],0,"Organisation et lisibilité du projet."]],
+m3:[["Quelle durée de transition reste discrète ?",["0,2 à 1 s","5 s","Sans limite"],0,"Court = discret."],["Que faut-il aligner pour un match cut ?",["Un mouvement ou une forme entre les deux plans","La musique","Le titre"],0,"La continuité vient du geste."],["Quand utiliser une transition marquée ?",["Pour une rupture de séquence volontaire","Entre chaque plan","Jamais"],0,"Réservée à des ruptures voulues."]],
+m4:[["Que fixe une image clé ?",["La valeur d'un paramètre à un instant précis","Le format d'export","Un masque"],0,"Entre deux images clés, la valeur est interpolée."],["Quel effet donne la courbe ease-in-out ?",["Départ et arrivée en douceur","Mouvement mécanique","Aucun mouvement"],0,"C'est le plus naturel pour un élément qui entre et se stabilise."],["Pourquoi une image clé de sortie ?",["Sans elle l'élément reste figé jusqu'à la coupe suivante","Pour alléger le projet","Elle est obligatoire à l'export"],0,"Sinon on dirait un bug."]],
+m5:[["Que provoque une intensité de chroma key trop élevée ?",["Le sujet devient transparent par endroits","Du vert reste visible","La lecture ralentit"],0,"Cheveux et peaux claires disparaissent."],["Pourquoi flouter légèrement la bordure du sujet détouré ?",["Éviter l'effet autocollant","Réduire le poids du fichier","Changer la couleur"],0,"Meilleure intégration visuelle."],["Comment vérifier un détourage ?",["En zoomant à 200 % sur les bords","À l'œil sans zoom","Seulement après l'export"],0,"Les défauts se voient de près."]],
+m6:[["Que caractérise le look « teal & orange » ?",["Ombres bleu-vert et peaux orangées","Tout en noir et blanc","Tout en rouge"],0,"C'est un contraste de teintes complémentaires."],["Quel danger à trop monter la saturation ?",["Des peaux orangées irréalistes","Un fichier plus léger","Moins de contraste"],0,"Les peaux trahissent la sur-saturation."],["Pourquoi utiliser un calque d'ajustement ?",["Un seul réglage pour tous les plans","Il remplace la correction","Il ajoute du son"],0,"Cohérence et gain de temps."]],
+m7:[["Pourquoi vérifier aussi au haut-parleur du téléphone ?",["Beaucoup de spectateurs écoutent ainsi","Pour économiser la batterie","C'est exigé par les plateformes"],0,"Le mix doit rester clair partout."],["Quelle précaution avec la réduction de bruit ?",["Rester prudent : trop forte, la voix devient métallique","La mettre au maximum","Ne jamais l'utiliser"],0,"Un excès dégrade le timbre."],["À quoi servent les fondus audio ?",["Éviter les claquements aux coupes","Accélérer la vidéo","Changer la voix"],0,"Ils adoucissent début et fin."]],
+m8:[["Combien de lignes maximum pour un sous-titre court ?",["2","6","10"],0,"Deux lignes restent lisibles."],["Pourquoi ajouter un contour au texte ?",["Garder le contraste sur n'importe quel fond","Réduire le poids","C'est obligatoire"],0,"Lisibilité sur fonds clairs ou foncés."],["Pourquoi copier-coller un texte déjà réglé ?",["Garder style et animation cohérents","Contourner la relecture","Accélérer l'export"],0,"Cohérence et rapidité."]],
+m9:[["Que faire des silences dans une interview dynamique ?",["Les couper (jump cut)","Les allonger","Les doubler"],0,"Le jump cut resserre le rythme."],["Quel risque d'un punch-in trop fort ?",["Une image pixelisée","Un son coupé","Un export impossible"],0,"Trop zoomer dégrade la définition."],["Pourquoi un SFX à chaque changement visuel ?",["Image et son bougent ensemble : le rythme se ressent","Pour alourdir le projet","C'est une règle de plateforme"],0,"Le couplage image/son renforce le rythme."]],
+m10:[["Qu'est-ce qu'une boucle ouverte ?",["Une promesse annoncée et révélée plus tard","Une vidéo qui se répète","Un effet visuel"],0,"Elle donne une raison de regarder jusqu'au bout."],["Que suggère une pente régulière de rétention ?",["Un rythme probablement trop lent","Un hook parfait","Un problème d'export"],0,"Une perte progressive évoque l'ennui ou la lenteur."],["Que faire d'un plan qui ne sert pas l'histoire ?",["Le couper, même s'il a coûté cher à tourner","Le garder","L'allonger"],0,"Le spectateur ignore le coût du tournage."]],
+m11:[["Quel ratio pour une publication Instagram classique ?",["4:5","21:9","3:1"],0,"Le 4:5 (1080×1350) occupe bien l'écran."],["Pourquoi tourner plus large que nécessaire ?",["On peut recadrer vers le vertical","Pour alourdir le fichier","Pour gagner de la place"],0,"On recadre plus facilement qu'on ne rajoute de l'image."],["Que faire avant de planifier une vidéo longue ?",["Vérifier les limites de durée actuelles","Rien","Réduire la résolution"],0,"Les limites évoluent."]],
+m12:[["Quel codec privilégier pour la compatibilité maximale ?",["H.264","Un codec rare","Aucun"],0,"H.264 est lisible presque partout."],["Pourquoi ne jamais repartir d'un fichier exporté ?",["Chaque compression dégrade l'image","Le fichier est trop petit","C'est interdit"],0,"Repars toujours du projet."],["Que vérifier à la fin de la timeline avant l'export ?",["Qu'aucun élément ajouté automatiquement n'est resté","La couleur du fond","Le nom de la piste"],0,"Clip de fin ou filigrane de modèle selon la version."]]
+};
+const FAQ={
+m0:[["Ma lecture est saccadée","Utilise la lecture en qualité réduite ou les proxys si ta version les propose, ferme les autres applications et garde les rushs sur un disque rapide."],["Mes éléments ont bougé après un changement de ratio","C'est un recadrage automatique : annule avec Ctrl+Z, puis repositionne ou refais le projet au bon ratio."]],
+m1:[["Ctrl+B ne coupe rien","Place le curseur sur le clip, sélectionne-le et vérifie qu'une autre fenêtre ou un champ de texte n'a pas le focus."],["Je supprime un clip et le suivant ne bouge pas","Utilise la suppression avec fermeture ou fais glisser le clip suivant ; vérifie l'aimantation."]],
+m2:[["Un flash noir apparaît entre deux clips","Il reste une image vide : zoome au cadre, rapproche les clips ou ajuste le trim."],["Le son coupe brutalement à une coupe","Ajoute un court fondu ou décale l'audio (J-cut / L-cut)."]],
+m3:[["Ma transition est trop brusque","Allonge-la vers 0,5 s et vérifie sa courbe."],["La transition ne s'applique pas","Les deux clips doivent être bout à bout sur la même piste et disposer d'une marge de matière au-delà de la coupe."]],
+m4:[["Mon mouvement paraît mécanique","Remplace l'interpolation linéaire par une courbe ease-in / ease-out."],["Mon animation saute","Une image clé est restée à une mauvaise valeur : contrôle chaque losange."]],
+m5:[["Du vert reste sur les bords","Monte un peu l'intensité, ajuste la tolérance et vérifie l'éclairage du fond au tournage."],["Mon masque ne suit pas le sujet","Anime-le avec des images clés ou resserre-le sur la zone utile."]],
+m6:[["Les peaux sont orangées","Baisse la saturation ou corrige température et teinte ; compare à un plan de référence."],["L'image est plate","Remonte le contraste avec modération et rétablis de vrais noirs."]],
+m7:[["La voix est noyée","Baisse la musique et applique un ducking."],["Il reste du bruit de fond","Combine une réduction modérée et une ambiance sonore discrète."]],
+m8:[["Mes sous-titres sont décalés","Recale chaque légende sur le début de la phrase correspondante."],["Le texte est illisible sur fond clair","Ajoute un contour, une ombre ou un fond derrière le texte."]],
+m9:[["Mon montage fatigue le spectateur","Réduis les effets et laisse des respirations."],["Mes coupes tombent à côté du rythme","Pose des marqueurs sur les temps forts et ajuste coupe par coupe."]],
+m10:[["Je n'ai pas de hook évident","Repère le moment le plus fort de la vidéo et déplace-le au début."],["Je perds du monde à mi-parcours","Raccourcis la séquence faible ou insère une relance (nouvelle info, changement de plan)."]],
+m11:[["Mon texte est caché par l'interface","Remonte-le et active l'affichage des zones sûres si ta version le propose."],["Des bandes noires apparaissent","Le ratio du projet ne correspond pas à la plateforme : recompose en 9:16."]],
+m12:[["L'export est très lourd","Baisse le débit ou passe en HEVC si l'appareil de lecture le gère."],["L'export est flou","Contrôle résolution et débit, et vérifie que la source n'est pas déjà de basse qualité."]]
+};
+const FICHES=[
+["Split, trim et suppression avec fermeture","Module 03","Couper et ajuster les clips.","Ctrl+B au curseur ; tirer le bord d'un clip ; supprimer avec fermeture du vide.","Zoom timeline pour la précision ; vérifier l'absence de trous.","Laisser des vides noirs ; couper sans zoomer."],
+["Images clés","Module 05","Animer position, échelle, rotation, opacité.","Réglages › losange à côté du paramètre.","Courbe ease-in-out ; 2 images clés suffisent le plus souvent.","Oublier l'image clé de sortie."],
+["Courbes de vitesse","Module 05","Contrôler l'accélération d'un mouvement.","Clic droit sur une image clé ou panneau Vitesse › Courbe selon l'usage.","Ease-out pour arriver, ease-in pour partir.","Rester en linéaire : mouvement mécanique."],
+["Masques","Module 06","Révéler ou cacher une zone d'un calque.","Réglages › Masque (linéaire, miroir, cercle, rectangle…).","Flou de bordure léger ; animation par images clés.","Bords trop durs ; masque qui ne suit pas le sujet."],
+["Chroma key","Module 06","Supprimer un fond vert ou bleu.","Réglages › Chroma key, pipette sur le fond.","Intensité et tolérance progressifs ; vérifier à 200 %.","Fond mal éclairé au tournage."],
+["Correction de couleur","Module 07","Neutraliser l'image.","Réglages › Ajuster : température, exposition, contraste, surbrillances, ombres.","Corriger sur une référence blanche ou grise.","Saturer pour « faire vivant »."],
+["Calque d'ajustement et LUT","Module 07","Appliquer un look à toute la séquence.","Panneau Ajustements ; LUT dans les réglages d'ajustement selon la version.","LUT à 30-60 % ; un seul look cohérent.","LUT à 100 % sur des plans non corrigés."],
+["Mixage de la voix","Module 08","Rendre la voix claire et régulière.","Réglages › Audio : réduction de bruit, amélioration, normalisation selon la version.","Voix vers 0 dB, crêtes hors du rouge.","Réduction de bruit excessive."],
+["Ducking","Module 08","Baisser la musique pendant la voix.","Option automatique selon la version, ou 4 images clés de volume.","Musique environ 15-25 dB sous la voix ; transition 0,3 s.","Musique qui couvre les mots."],
+["Légendes automatiques","Module 09","Générer des sous-titres depuis la voix.","Panneau Texte › Légendes, choix de la langue.","Relecture complète ; 2 lignes max ; style unique.","Publier sans relire."],
+["Rampe de vitesse","Module 10","Accélérer puis ralentir pour souligner l'action.","Panneau Vitesse › Courbe.","1 à 3 par vidéo ; points calés sur l'action.","Abus : effet banalisé."],
+["Réglages d'export","Module 13","Produire le fichier final.","Bouton Exporter : résolution, débit, codec, format, fréquence.","MP4 H.264 ; fréquence = projet ; test de 10 s.","Réexporter depuis un export ; monter au-delà de la source."]
+];
+CONTENT.fiches=()=>`<div class="kicker">RÉFÉRENCE</div><h1 class="page-title">Fiches techniques</h1><p class="lede">Douze fiches à garder sous la main pendant tes montages. Les noms de menus peuvent varier selon ta version de CapCut.</p><div class="meta"></div><input class="search" id="fsearch" placeholder="Rechercher une fiche (ex. masque, export, audio)…" oninput="filterFiches(this.value)"><div class="grid fiches" id="fgrid">${FICHES.map(f=>`<div class="fiche"><div class="mod">${f[1]}</div><h3>${f[0]}</h3><p>${f[2]}</p><dl><dt>Où / comment</dt><dd>${f[3]}</dd><dt>Réglages conseillés</dt><dd>${f[4]}</dd><dt>À éviter</dt><dd>${f[5]}</dd></dl></div>`).join('')}</div>`;
+function filterFiches(v){v=v.toLowerCase();document.querySelectorAll('#fgrid .fiche').forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(v)?'':'none';});}
+MODULES.splice(MODULES.findIndex(m=>m.id==='glossary'),0,{id:"fiches",num:"▤",title:"Fiches techniques",sub:"12 fiches de référence rapide",ready:true});
+function mkQ(a){return a.map(([q,o,c,e])=>({q:q,opts:o.map((t,i)=>({t:t,ok:i===c})).sort(()=>Math.random()-.5),exp:e}));}
+function faqHtml(id){const f=FAQ[id];return f?`<section class="block"><h2>Dépannage : questions fréquentes</h2>${f.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</section>`:'';}
+function buildToc(){
+  const m=document.getElementById('main'),hs=[...m.querySelectorAll('section.block h2')],meta=m.querySelector('.meta');
+  if(hs.length<3||!meta)return;
+  hs.forEach((h,i)=>h.id='s'+i);
+  const t=document.createElement('nav');t.className='toc';
+  t.innerHTML='<b>Dans ce module</b>'+hs.map((h,i)=>`<a onclick="document.getElementById('s${i}').scrollIntoView({behavior:'smooth',block:'start'})">${h.textContent}</a>`).join('');
+  meta.insertAdjacentElement('afterend',t);
+}
+const _rm3=renderMain;
+renderMain=function(){
+  _rm3();
+  const a=document.querySelector('#main .actions');
+  if(a&&QX[current]){a.insertAdjacentHTML('beforebegin','<section class="block"><h2>Quiz approfondi</h2><div id="quizDeep"></div></section>'+faqHtml(current));renderQuizGeneric('quizDeep',mkQ(QX[current]));}
+  buildToc();
+};
+function applyNavFilter(){
+  const q=((document.getElementById('navSearch')||{}).value||'').toLowerCase().trim();
+  document.querySelectorAll('#navList .nav-item').forEach(el=>{el.style.display=(!q||el.textContent.toLowerCase().includes(q))?'':'none';});
+  document.querySelectorAll('#navList .nav-title').forEach(t=>{let n=t.nextElementSibling,v=false;while(n&&!n.classList.contains('nav-title')){if(n.style.display!=='none')v=true;n=n.nextElementSibling;}t.style.display=v?'':'none';});
+}
+const _rn=renderNav;
+renderNav=function(){
+  _rn();
+  if(!document.getElementById('navSearch')){const i=document.createElement('input');i.id='navSearch';i.className='search';i.placeholder='Rechercher un module…';i.oninput=applyNavFilter;const r=document.getElementById('rail');r.insertBefore(i,r.firstChild);}
+  applyNavFilter();
+};
+(function(){
+  const b=document.createElement('div');b.id='readbar';document.body.appendChild(b);
+  const t=document.createElement('button');t.id='toTop';t.textContent='↑';t.setAttribute('aria-label','Haut de page');t.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});document.body.appendChild(t);
+  addEventListener('scroll',()=>{const h=document.documentElement;b.style.width=(h.scrollTop/((h.scrollHeight-h.clientHeight)||1)*100)+'%';t.style.display=h.scrollTop>600?'block':'none';});
+})();
+
+/* ===== v4 : illustrations animées, notes, révélations ===== */
+const sil=dx=>`<g transform="translate(${dx},0)"><circle cx="150" cy="82" r="22" fill="#d8b08c"/><rect x="118" y="106" width="64" height="72" rx="26" fill="#2b3a44"/></g>`;
+const scene=()=>`<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#8fa9bd"/><circle cx="240" cy="50" r="22" fill="#ecdca8"/><polygon points="0,130 70,70 130,125 190,80 260,130 320,100 320,180 0,180" fill="#64777f"/><rect y="140" width="320" height="40" fill="#4a5a50"/><circle cx="110" cy="102" r="12" fill="#d8b08c"/><rect x="96" y="114" width="28" height="42" rx="12" fill="#33424d"/></svg>`;
+const lane=(n,t)=>`<div class="lane"><span>${n}</span><div class="trk"><i style="animation-timing-function:${t}"></i></div></div>`;
+const meter=(n,c,a)=>`<div class="mrow"><span>${n}</span><div class="mt"><b style="background:${c};animation:${a} 4s infinite"></b></div></div>`;
+const xbar=(n,w,c,d)=>`<div class="mrow"><span>${n}</span><div class="mt tall"><b class="bar" style="width:${w}%;background:${c}"></b></div><small>${d}</small></div>`;
+const tracks=[["Texte","b",[[220,100],[430,110]]],["B-roll","a",[[170,90],[330,100],[500,80]]],["Vidéo principale","b",[[140,490]]],["Voix · Audio 1","a",[[140,290],[450,180]]],["Musique · Audio 2","b",[[140,490]]],["SFX · Audio 3","a",[[250,26],[380,26],[520,26]]]];
+const beats=[40,150,260,370,480,590];
+const ILLU={
+m0:()=>`<svg viewBox="0 0 640 300"><g class="zn"><rect x="10" y="10" width="190" height="170" rx="10"/><rect x="210" y="10" width="270" height="170" rx="10" style="animation-delay:2s"/><rect x="490" y="10" width="140" height="170" rx="10" style="animation-delay:4s"/><rect x="10" y="190" width="620" height="100" rx="10" style="animation-delay:6s"/></g><text x="105" y="100" text-anchor="middle">1 · Médias</text><text x="345" y="100" text-anchor="middle">2 · Prévisualisation</text><text x="560" y="100" text-anchor="middle">3 · Réglages</text><text x="320" y="248" text-anchor="middle">4 · Timeline</text><rect class="a" x="30" y="204" width="150" height="14" rx="4"/><rect class="b" x="190" y="204" width="220" height="14" rx="4"/><rect class="a" x="420" y="204" width="180" height="14" rx="4"/></svg>`,
+m1:()=>`<svg viewBox="0 0 640 220"><g class="kc"><rect x="200" y="14" width="90" height="46" rx="10"/><text x="245" y="43" text-anchor="middle">Ctrl</text><text x="312" y="43" text-anchor="middle">+</text><rect class="kb" x="335" y="14" width="60" height="46" rx="10"/><text x="365" y="43" text-anchor="middle">B</text></g><rect class="p" x="40" y="100" width="560" height="60" rx="10"/><rect class="b" x="40" y="108" width="200" height="44" rx="8"/><rect class="b cutr" x="240" y="108" width="360" height="44" rx="8"/><rect class="a ph" x="238" y="86" width="4" height="88" rx="2"/><text x="320" y="200" text-anchor="middle" class="mu">Le curseur avance, Ctrl+B coupe : le clip est séparé en deux</text></svg>`,
+m2:()=>`<svg viewBox="0 0 640 250">${tracks.map((r,i)=>`<text x="10" y="${36+i*38}" class="mu">${r[0]}</text>`+r[2].map(([x,w],j)=>`<rect class="gr ${r[1]}" x="${x}" y="${20+i*38}" width="${w}" height="24" rx="6" style="animation-delay:${(i*.25+j*.12).toFixed(2)}s"/>`).join('')).join('')}</svg>`,
+m3:()=>`<svg viewBox="0 0 640 210"><rect class="a" x="20" y="20" width="280" height="140" rx="12"/><rect class="b" x="20" y="20" width="280" height="140" rx="12" opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.4;.6;.9;1" dur="5s" repeatCount="indefinite"/></rect><text x="160" y="95" text-anchor="middle" class="wt">Plan A → Plan B</text><text x="160" y="190" text-anchor="middle">Fondu enchaîné</text><rect class="a" x="340" y="20" width="280" height="140" rx="12"/><rect class="b" x="340" y="20" width="0" height="140" rx="12"><animate attributeName="width" values="0;280;280;0;0" keyTimes="0;.4;.6;.9;1" dur="5s" repeatCount="indefinite"/></rect><text x="480" y="95" text-anchor="middle" class="wt">Plan A → Plan B</text><text x="480" y="190" text-anchor="middle">Essuyage (masque animé)</text></svg>`,
+m4:()=>lane('Linéaire','linear')+lane('Ease-in (départ doux)','ease-in')+lane('Ease-out (arrivée douce)','ease-out')+lane('Ease-in-out','ease-in-out'),
+m5:()=>`<svg viewBox="0 0 640 215"><rect x="20" y="20" width="260" height="160" rx="12" fill="#2fa84f"/>${sil(0)}<rect y="20" width="3" height="160" fill="#fff" opacity=".7"><animate attributeName="x" values="20;277;20" dur="4s" repeatCount="indefinite"/></rect><text x="320" y="110" text-anchor="middle" style="font-size:28px">→</text><rect x="360" y="20" width="260" height="160" rx="12" fill="#8fa9bd"/><polygon points="360,150 430,95 490,145 550,100 620,150 620,180 360,180" fill="#64777f"/>${sil(340)}<text x="150" y="200" text-anchor="middle">Fond vert (tournage)</text><text x="490" y="200" text-anchor="middle">Résultat (incrustation)</text></svg>`,
+m6:()=>`<div class="cmp"><div class="lay">${scene()}</div><div class="lay graded" id="cmpTop">${scene()}</div><span class="tg l">Avant</span><span class="tg r">Après</span></div><input type="range" min="0" max="100" value="50" class="rng" oninput="cmpSlide(this.value)" aria-label="Avant / après">`,
+m7:()=>meter('Voix','var(--accent)','vo')+meter('Musique (ducking)','var(--accent2)','mu2')+meter('SFX','var(--amber)','sf'),
+m8:()=>`<svg viewBox="0 0 640 290"><rect x="245" y="10" width="150" height="270" rx="24" fill="var(--panel2)" stroke="var(--line)" stroke-width="3"/><rect x="262" y="40" width="116" height="130" rx="8" fill="#8fa9bd"/><g class="wt2"><text class="wd" x="320" y="205" text-anchor="middle" style="animation-delay:0s">Ce montage</text><text class="wd" x="320" y="230" text-anchor="middle" style="animation-delay:.8s">change</text><text class="wd hl" x="320" y="258" text-anchor="middle" style="animation-delay:1.6s">TOUT</text></g><text x="130" y="205" text-anchor="middle" class="mu">3 à 6 mots</text><text x="130" y="225" text-anchor="middle" class="mu">par apparition</text><text x="520" y="230" text-anchor="middle" class="mu">mot clé coloré</text></svg>`,
+m9:()=>`<svg viewBox="0 0 640 180">${beats.map(x=>`<rect class="mu-f" x="${x}" y="20" width="2" height="100"/><circle class="a" cx="${x+1}" cy="30" r="9" opacity="0"><animate attributeName="opacity" values="1;0;0" keyTimes="0;.12;1" dur="6s" begin="${((x-40)/560*6).toFixed(2)}s" repeatCount="indefinite"/></circle>`).join('')}${beats.slice(0,-1).map((x,i)=>`<rect class="${i%2?'a':'b'}" x="${x+4}" y="100" width="${beats[i+1]-x-8}" height="30" rx="6"/>`).join('')}<rect class="ph" x="40" y="14" width="3" height="124" rx="1.5" fill="#fff"><animate attributeName="x" from="40" to="590" dur="6s" repeatCount="indefinite"/></rect><text x="320" y="160" text-anchor="middle" class="mu">Chaque coupe tombe sur un temps fort de la musique</text></svg>`,
+m10:()=>`<svg viewBox="0 0 640 230"><line x1="40" y1="20" x2="40" y2="190" stroke="var(--line)"/><line x1="40" y1="190" x2="620" y2="190" stroke="var(--line)"/><rect x="40" y="20" width="70" height="170" fill="var(--danger)" opacity=".1"/><path class="crv" pathLength="1" d="M42 40 C62 90 82 110 130 120 L200 128 C240 132 270 130 300 142 L330 118 L350 112 C400 122 430 150 470 160 L610 176"/><text x="75" y="14" text-anchor="middle" class="mu">Hook : 3 s</text><text x="330" y="100" text-anchor="middle">Relance</text><text x="180" y="150" class="mu">Une chute ici = hook faible</text><text x="330" y="214" text-anchor="middle" class="mu">Durée de la vidéo →</text><text x="12" y="110" class="mu" transform="rotate(-90 12 110)" text-anchor="middle">Spectateurs</text></svg>`,
+m11:()=>`<svg viewBox="0 0 640 300"><rect x="60" y="15" width="150" height="266" rx="14" fill="var(--panel2)" stroke="var(--line)" stroke-width="2"/><rect class="sz" x="60" y="15" width="150" height="34" rx="14"/><rect class="sz" x="60" y="222" width="150" height="59" rx="14"/><rect class="sz" x="178" y="120" width="32" height="102"/><rect x="72" y="58" width="104" height="156" rx="6" fill="none" stroke="var(--accent)" stroke-dasharray="5 4"/><text x="124" y="140" text-anchor="middle">Zone sûre</text><text x="135" y="302" text-anchor="middle" class="mu">9:16 · 1080×1920</text><rect x="290" y="75" width="320" height="180" rx="10" fill="var(--panel2)" stroke="var(--line)" stroke-width="2"/><text x="450" y="170" text-anchor="middle">16:9 · 1920×1080</text><text x="450" y="290" text-anchor="middle" class="mu">Zones rouges = recouvertes par l'interface</text></svg>`,
+m12:()=>xbar('Débit bas','30','var(--danger)','Léger, artefacts visibles')+xbar('Recommandé','60','var(--accent)','Bon équilibre poids / qualité')+xbar('Plus élevé','90','var(--accent2)','Fichier lourd, détails maximum')
+};
+const CAP={m0:"Les 4 zones de l'interface, mises en avant tour à tour.",m1:"Animation : le curseur avance, Ctrl+B sépare le clip.",m2:"Organisation type des pistes, du texte aux effets sonores.",m3:"Deux transitions : un fondu enchaîné et un essuyage par masque.",m4:"Quatre courbes de vitesse : même trajet, sensation très différente.",m5:"Du tournage sur fond vert à l'incrustation finale.",m6:"Déplace le curseur pour comparer l'image avant et après étalonnage.",m7:"Ducking : la musique baisse quand la voix parle.",m8:"Une phrase apparaît par groupes de mots, avec le mot clé en couleur.",m9:"Les coupes sont calées sur les temps forts.",m10:"Courbe de rétention type : la chute initiale trahit un hook faible.",m11:"Zones masquées par l'interface en vertical, comparées au format horizontal.",m12:"Plus le débit monte, plus le fichier est lourd et fidèle."};
+function cmpSlide(v){const t=document.getElementById('cmpTop');if(t)t.style.clipPath='inset(0 '+(100-v)+'% 0 0)';}
+let notes={};try{notes=JSON.parse(localStorage.getItem('cc_notes')||'{}');}catch(e){}
+function saveNote(el){notes[el.dataset.k]=el.value;try{localStorage.setItem('cc_notes',JSON.stringify(notes));}catch(e){}}
+const esc=t=>(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function notesHtml(id){return `<section class="block"><h2>Mes notes</h2><textarea class="notes" data-k="${id}" placeholder="Note tes réglages, astuces et questions pour ce module…" oninput="saveNote(this)">${esc(notes[id])}</textarea></section>`;}
+function finishNext(id){done[id]=true;saveDone();const l=MODULES.filter(m=>m.ready&&(!m.pro||MODE==='pro')),i=l.findIndex(m=>m.id===id),n=l[i+1];renderNav();updateProgress();go(n?n.id:'home');}
+let io;
+function reveal(){
+  if(!('IntersectionObserver' in window))return;
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.06});
+  document.querySelectorAll('#main section.block,#main .card,#main .exercise,#main .quiz-q,#main details,#main .fig,#main .fiche').forEach(e=>{e.classList.add('rv');io.observe(e);});
+}
+const _rm4=renderMain;
+renderMain=function(){
+  _rm4();
+  const main=document.getElementById('main'),mod=MODULES.find(m=>m.id===current);
+  main.dataset.num=(mod&&mod.id[0]==='m')?mod.num:'';
+  const anchor=main.querySelector('.toc')||main.querySelector('.meta');
+  if(anchor&&ILLU[current])anchor.insertAdjacentHTML('afterend',`<figure class="fig">${ILLU[current]()}<figcaption>${CAP[current]}</figcaption><img class="shot" src="images/${current}.png" alt="" onerror="this.remove()"></figure>`);
+  const a=main.querySelector('.actions');
+  if(a&&mod&&mod.id[0]==='m'){
+    a.insertAdjacentHTML('beforebegin',notesHtml(current));
+    a.insertAdjacentHTML('afterbegin',`<button class="btn" style="margin:0 12px 14px 0" onclick="finishNext('${current}')">Terminer et passer au suivant →</button>`);
+  }
+  main.style.animation='none';void main.offsetWidth;main.style.animation='';
+  reveal();
+};
+
+/* ===== v5 : choix Classic / Pro ===== */
+let MODE='classic';try{MODE=localStorage.getItem('cc_mode')||'';}catch(e){}
+const PRO={
+m0:[["Travaille avec les proxys ou la lecture en qualité réduite si ta machine rame (selon la version), puis exporte depuis les originaux.","Crée un projet gabarit : pistes nommées, dossiers, polices et musique de marque. Duplique-le pour chaque vidéo.","Garde la même arborescence disque : 01_Rushs, 02_Audio, 03_Graphismes, 04_Exports, 05_Projet."],"Import → tri → assemblage brut → affinage → habillage → son → étalonnage → export de contrôle → export final.","Termine l'assemblage brut avant tout effet : la structure représente l'essentiel du travail."],
+m1:[["Adapte les raccourcis à tes actions les plus fréquentes dans Paramètres › Raccourcis (selon la version).","Monte en passes successives : structure, rythme, finition, plutôt que plan par plan.","Pose des marqueurs pour noter les corrections sans interrompre ton flux."],"Passe 1 : écouter sans toucher. Passe 2 : couper. Passe 3 : affiner à l'image. Passe 4 : réécoute complète.","Mesure ton temps de montage par minute de vidéo finie et vise à le réduire d'une vidéo à l'autre."],
+m2:[["Couvre en trois couches : A-roll constant, B-roll de contexte, insert de détail pour relancer.","Coupe sur l'action ou sur un changement d'intention, jamais au milieu d'un mouvement lent.","Garde 3 à 5 images de marge (poignées) avant et après chaque plan pour pouvoir ajuster."],"Assemblage brut à environ 120 % de la durée visée, puis resserrage final.","Dialogue : coupe à l'inspiration ou au début d'un mot. Plans larges 4-7 s, serrés 2-4 s (repères à adapter)."],
+m3:[["La coupe nette reste la transition la plus utilisée dans un montage professionnel.","Masque une coupe par un mouvement (balayage, passage d'objet) plutôt que par un effet.","Associe chaque transition marquée à un son (whoosh, montée) calé sur la coupe."],"Choisis selon l'intention : continuité (cut), temps (fondu), lieu (match cut ou essuyage), énergie (mouvement + son).","Durées : cut 0 s, fondu 0,3-1 s, transition rapide 0,15-0,3 s."],
+m4:[["Anime en 2 images clés + courbe plutôt qu'en 6 images clés linéaires.","Décale légèrement chaque élément (2 à 4 images) pour une animation en cascade.","Ajoute anticipation (petit recul) et dépassement (léger rebond) pour donner du poids."],"Pose d'abord les positions finales, puis anime l'entrée depuis un état hors cadre.","Entrées 0,2-0,4 s, sorties un peu plus rapides, pas plus de 2 mouvements simultanés par élément."],
+m5:[["Éclaire le fond de façon uniforme et éloigne le sujet de 1,5 à 2 m pour limiter le reflet vert.","Traite le reflet vert résiduel sur les bords avec les réglages de bordure/ombre de ta version.","Intègre : accorde lumière, température et netteté, puis ajoute une ombre portée discrète."],"Détourage propre → intégration couleur → ombre et profondeur → grain commun.","Contrôle à 200 % puis à taille réelle : plus aucun halo vert."],
+m6:[["Utilise les courbes (selon la version) pour contrôler le contraste plus finement qu'avec les seuls curseurs.","Prends la peau comme référence et règle le reste autour d'elle.","Travaille en deux étages : correction par plan, puis look global sur calque d'ajustement."],"Neutraliser → égaliser les plans → look global → finitions (grain, vignette) → contrôle sur plusieurs écrans.","Vérifie sur au moins 2 écrans ; saturation globale rarement au-delà de +15."],
+m7:[["Règle chaque couche au bon niveau dès le départ plutôt que de tout rattraper au mixage.","Mixe en trois passes : voix seule, voix + musique, ensemble avec SFX.","Utilise de courts fondus (5 à 15 images) aux coupes audio pour supprimer les claquements."],"Nettoyage → niveau voix → musique + ducking → SFX → écoute de contrôle au casque et sur téléphone.","Musique environ 15 à 25 dB sous la voix ; crêtes toujours hors du rouge."],
+m8:[["Garde une hiérarchie simple : un titre fort, un texte courant, une couleur d'accent.","Découpe les sous-titres selon le souffle de la voix, pas selon la grammaire.","Adapte la durée d'affichage : environ 15 caractères par seconde de lecture."],"Générer → relire → découper → styler → animer → vérifier la zone sûre.","3 à 6 mots par écran, 2 lignes maximum, 2 polices maximum."],
+m9:[["Varie les valeurs de plan (large, moyen, serré) : chaque coupe doit apporter du neuf.","Coupe 2 à 3 images avant le temps fort : l'œil perçoit mieux la synchro.","Traite les effets comme une ponctuation : un effet par idée, jamais en continu."],"Écrire la structure → monter à plat → resserrer → ponctuer (SFX, effets) → relire à vitesse normale.","Un changement visuel ou sonore toutes les 3 à 5 s ; 1 à 3 rampes de vitesse par vidéo."],
+m10:[["Écris le hook avant de monter et monte les 3 premières secondes en premier.","Alterne tension et relâchement : des moments denses, puis des respirations.","Compare les courbes de rétention de plusieurs vidéos pour repérer tes motifs de chute."],"Idée → hook → 3 à 5 temps forts → montage → test → analyse → itération.","Hook en 3 s maximum ; promesse tenue avant la fin ; fin qui relance le début pour les formats courts."],
+m11:[["Conçois dans la zone sûre dès le départ : texte et sujet au centre.","Pour décliner un contenu, recompose chaque plan au lieu d'un recadrage automatique global.","Prépare une miniature YouTube à part : visage, fort contraste, 3 mots au plus."],"Master 16:9 → déclinaisons 9:16 et 4:5 recomposées → export par plateforme.","1920×1080 (16:9), 1080×1920 (9:16), 1080×1350 (4:5) ; vérifie les limites de durée actuelles."],
+m12:[["MP4 H.264 comme format de livraison universel ; garde un master de meilleure qualité si ta version le permet.","Nomme tes fichiers : projet_plateforme_ratio_version.mp4 et tiens un journal des versions.","Contrôle le fichier exporté en entier, pas seulement le projet."],"Export test de 10 s → export final → contrôle image/son/durée → archivage projet + médias.","Compare 3 réglages sur le même extrait avant de choisir ton débit standard."]
+};
+const FLASH=[["Raccourci pour couper un clip ?","Ctrl+B"],["Split vs ripple delete ?","Split divise ; ripple delete supprime et referme le vide"],["A-roll / B-roll ?","Plan principal / plans d'illustration"],["J-cut ?","Le son du plan suivant démarre avant l'image"],["L-cut ?","Le son du plan précédent déborde sur l'image suivante"],["Ease-out ?","Ralentit à l'arrivée"],["Ease-in ?","Démarre doucement"],["Match cut ?","Continuité par un mouvement ou une forme entre deux plans"],["Image clé ?","Valeur d'un paramètre à un instant ; CapCut interpole entre deux"],["Cause n°1 d'un chroma key raté ?","Un fond mal éclairé au tournage"],["Correction vs étalonnage ?","La correction neutralise ; l'étalonnage donne le style"],["Calque d'ajustement ?","Un réglage de couleur appliqué à tout ce qui est dessous"],["Intensité conseillée d'une LUT ?","Environ 30 à 60 %"],["Niveau de la musique sous la voix ?","Environ 15 à 25 dB plus bas"],["Clipping ?","Saturation irréversible : baisser le niveau à la source"],["Ducking ?","Baisse de la musique pendant la voix"],["Mots par écran en format court ?","3 à 6 mots, 2 lignes maximum"],["Pattern interrupt ?","Changement d'image, de son ou de texte toutes les 3 à 5 s"],["Durée d'un hook ?","Les 3 premières secondes"],["Résolution du 9:16 ?","1080×1920"],["Résolution du 4:5 ?","1080×1350"],["Codec le plus compatible ?","H.264 (MP4)"],["Pourquoi ne pas réexporter un export ?","Chaque compression dégrade l'image"],["Zone de sécurité ?","Partie de l'image non recouverte par l'interface de la plateforme"]];
+const PROEXAM=[
+["Ton assemblage brut dure 3 min pour une vidéo visée à 60 s. Première action ?",["Supprimer les passages qui ne servent pas le message avant d'ajouter des effets","Tout accélérer x3","Ajouter de la musique"],0,"On resserre la structure avant l'habillage."],
+["Après étalonnage, les peaux sont orangées. Priorité ?",["Régler saturation et température en prenant la peau comme référence","Augmenter le contraste","Ajouter une LUT plus forte"],0,"La peau sert de référence de couleur."],
+["La voix est claire au casque mais confuse sur téléphone. Que faire ?",["Baisser musique et SFX, remonter la voix, vérifier au haut-parleur","Monter le volume à l'export","Ajouter de la réverbération"],0,"Le mix doit fonctionner sur l'écoute réelle du public."],
+["Comment obtenir un zoom d'insistance naturel ?",["Deux images clés d'échelle avec courbe ease-in-out","Six images clés linéaires","Un filtre quelconque"],0,"Peu d'images clés et une bonne courbe."],
+["Halo vert sur les cheveux après chroma key. Premier réflexe ?",["Ajuster tolérance/bordure et vérifier éclairage et distance du fond","Augmenter l'exposition","Mettre un fond noir"],0,"Le problème vient souvent du tournage et du reflet vert."],
+["Où placer les sous-titres d'un Short ?",["Dans la zone sûre, loin du bas couvert par l'interface","Tout en bas","Hors cadre"],0,"L'interface recouvre les bords, surtout en bas."],
+["La rétention chute fortement à 2 s. Diagnostic probable ?",["Un hook faible","Un export trop lourd","Une musique trop forte"],0,"Les gens partent dès le début : le hook ne convainc pas."],
+["Quel format de livraison universel ?",["MP4 H.264","Un format rare","GIF"],0,"Compatibilité maximale."],
+["Un même réglage sur 30 clips : méthode pro ?",["Calque d'ajustement ou collage des attributs","Refaire à la main","Exporter chaque clip"],0,"On évite la répétition manuelle."],
+["Où caler le son d'une transition ?",["Sur la coupe, souvent légèrement avant","2 secondes après","Nulle part"],0,"Image et son bougent ensemble."],
+["Deux hooks possibles : comment trancher ?",["Monter les 3 premières secondes des deux et comparer","Tirer au sort","Garder le plus long"],0,"Tester vaut mieux que deviner."],
+["Un client veut 16:9, 9:16 et 4:5. Méthode ?",["Un master puis des déclinaisons recomposées","Un seul export recadré partout","Tourner trois fois"],0,"Chaque format se recompose."],
+["Quelle erreur dégrade l'image à coup sûr ?",["Réexporter depuis un fichier déjà exporté","Exporter en MP4","Nommer le fichier"],0,"Chaque compression ajoute des pertes."],
+["Le vumètre touche le rouge sur la voix. Action ?",["Baisser le niveau à la source","Compenser à l'export","Ajouter de la musique"],0,"Le clipping ne se répare pas après coup."],
+["Où couper une interview pour un rendu fluide ?",["À l'inspiration ou au début d'un mot","Au milieu d'un mot","N'importe où"],0,"La respiration offre un point de coupe naturel."],
+["Pourquoi garder des poignées de 3 à 5 images ?",["Pouvoir ajuster rythme et transitions sans manquer de matière","Réduire le poids","C'est obligatoire"],0,"La marge donne de la liberté de montage."],
+["Combien de transitions marquées dans un montage pro ?",["Très peu, réservées aux ruptures voulues","Une par coupe","Toujours les mêmes"],0,"La coupe nette domine."],
+["Une LUT est trop agressive. Que faire ?",["Réduire son intensité et corriger les plans d'abord","L'ajouter deux fois","La laisser à 100 %"],0,"On dose la LUT sur des plans corrigés."],
+["Que vérifier avant l'export ?",["Lecture complète, niveaux audio, trous, zone sûre, éléments auto en fin","Seulement la durée","Rien"],0,"Un contrôle complet évite de refaire l'export."],
+["Quelle règle pour la durée d'affichage d'un texte ?",["Environ 15 caractères par seconde de lecture","0,1 s","30 s"],0,"C'est un repère de lisibilité courant."]
+];
+const TPC=[["Timeline sans aucun trou","Pistes organisées selon la convention","Durée finale entre 55 et 65 s","Rythme de coupe adapté (3 à 6 s/plan)"],["Aucune transition native utilisée","Match cut réussi","Titre animé fluide (courbes ease)","Entrée et sortie animées"],["Aucun résidu vert à 200 %","Bordure légèrement floutée","Lumière et couleur accordées","Habillage cohérent"],["Coupes sur les temps forts","Au moins une transition personnalisée","Titre animé par images clés","Export vérifié sur téléphone"],["Plans corrigés puis étalonnés","Calque d'ajustement utilisé","Voix claire au haut-parleur","Aucun dépassement rouge"],["Hook clair en 3 s","Sous-titres relus et stylés","Texte dans la zone sûre","Export selon la checklist"]];
+function proHtml(id){const p=PRO[id];return `<section class="block"><h2>Niveau Pro <span class="badge">PRO</span></h2><div class="card"><div class="card-title" style="color:var(--accent)">Techniques de pro</div><ul>${p[0].map(t=>`<li>${t}</li>`).join('')}</ul></div><div class="card"><div class="card-title" style="color:var(--accent2)">Workflow professionnel</div>${p[1]}</div><div class="card tip"><div class="card-title">Repères chiffrés</div>${p[2]}</div></section>`;}
+function tpHtml(){return `<section class="block"><h2>Carnet de suivi des TP <span class="badge">PRO</span></h2>${TPC.map((l,i)=>`<div class="card"><div class="card-title" style="color:var(--accent)">TP ${i+1} · critères de réussite</div><div class="checklist">${l.map((t,j)=>`<label><input type="checkbox" data-k="tp${i}_${j}" ${checks['tp'+i+'_'+j]?'checked':''} onchange="toggleCheck(this)"> ${t}</label>`).join('')}</div></div>`).join('')}</section>`;}
+let flashState={};try{flashState=JSON.parse(localStorage.getItem('cc_flash')||'{}');}catch(e){}
+let fCur=0,fShown=false;
+function fcPick(){const v=i=>flashState[i]||0,min=Math.min(...FLASH.slice(0,flashLimit()).map((_,i)=>v(i))),pool=FLASH.slice(0,flashLimit()).map((_,i)=>i).filter(i=>v(i)===min&&i!==fCur);if(pool.length)fCur=pool[Math.floor(Math.random()*pool.length)];fShown=false;fcDraw();}
+function fcDraw(){const w=document.getElementById('fcWrap');if(!w)return;const m=FLASH.filter((_,i)=>(flashState[i]||0)>=3).length;w.innerHTML=`<div class="fcard"><div class="fq">${FLASH[fCur][0]}</div>${fShown?`<div class="fa">${FLASH[fCur][1]}</div><div class="fbtns"><button class="btn ghost" onclick="fcRate(0)">À revoir</button><button class="btn" onclick="fcRate(1)">Je savais</button></div>`:`<button class="btn" onclick="fShown=true;fcDraw()">Voir la réponse</button>`}</div><p style="color:var(--muted);text-align:center">Maîtrisées : ${m} / ${flashLimit()}</p>${ACC.paid?'':'<p style="text-align:center"><a class="lnk" onclick="openPay()">Débloquer les '+FLASH.length+' cartes (Pro complet)</a></p>'}`;}
+function fcRate(ok){flashState[fCur]=ok?Math.min(3,(flashState[fCur]||0)+1):0;try{localStorage.setItem('cc_flash',JSON.stringify(flashState));}catch(e){}fcPick();}
+CONTENT.flash=()=>`<div class="kicker">PRO · RÉVISION</div><h1 class="page-title">Cartes de révision</h1><p class="lede">Répétition espacée : les cartes que tu rates reviennent plus souvent, celles que tu connais s'espacent. Une carte est maîtrisée après 3 réussites de suite.</p><div class="meta"></div><div id="fcWrap"></div>`;
+let proBest=0;try{proBest=+(localStorage.getItem('cc_pro_best')||0);}catch(e){}
+CONTENT.proexam=()=>`<div class="kicker">PRO · ÉVALUATION</div><h1 class="page-title">Examen Pro</h1><p class="lede">20 mises en situation, 25 minutes chronométrées, 16 bonnes réponses sur 20 pour réussir. En cas de réussite, tu peux imprimer une attestation d'auto-évaluation (document personnel, non officiel).</p><div class="meta"></div>${proBest?`<div class="card"><div class="card-title" style="color:var(--accent)">Meilleur score</div>${proBest} / 20</div>`:''}<div id="proArea"><button class="btn" onclick="startProExam()">Commencer l'examen (25 min)</button></div>`;
+let ptim=null;
+function startProExam(){
+  const a=document.getElementById('proArea');let left=1500;
+  a.innerHTML='<div class="timer" id="proTimer">25:00</div><div id="proExamArea"></div><button class="btn" onclick="checkProExam()">Terminer et corriger</button><div id="proRes"></div>';
+  renderQuizGeneric('proExamArea',mkQ(PROEXAM));
+  const b=document.querySelector('#proExamArea>button');if(b)b.remove();
+  clearInterval(ptim);
+  ptim=setInterval(()=>{const t=document.getElementById('proTimer');if(!t){clearInterval(ptim);return;}left--;t.textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');if(left<=0){clearInterval(ptim);checkProExam();}},1000);
+}
+function checkProExam(){
+  clearInterval(ptim);
+  const area=document.getElementById('proExamArea');if(!area)return;
+  checkQuizGeneric('proExamArea');
+  const sc=area.querySelector('.score');if(sc)sc.remove();
+  let got=0;area._data.forEach((it,i)=>{const c=document.querySelector('input[name="proExamArea_q'+i+'"]:checked');if(c&&it.opts[+c.value].ok)got++;});
+  if(got>proBest){proBest=got;try{localStorage.setItem('cc_pro_best',got);}catch(e){}}
+  const ok=got>=16;
+  document.getElementById('proRes').innerHTML=`<div class="score">Score : ${got} / 20 — ${ok?'Réussi ! Tu peux imprimer ton attestation.':'Pas encore : relis le niveau Pro des modules concernés et retente.'}</div>`+(ok?`<p style="margin-top:14px"><input class="search" id="certName" placeholder="Ton nom pour l'attestation" style="max-width:340px"> <button class="btn" onclick="printCert()">Imprimer l'attestation</button></p>`:'');
+  document.getElementById('proRes').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function printCert(){
+  const n=(document.getElementById('certName').value||'Candidat').trim();let c=document.getElementById('cert');
+  if(!c){c=document.createElement('div');c.id='cert';document.body.appendChild(c);}
+  c.innerHTML=`<div class="certbox"><div class="certk">CAPCUT ACADEMY · VERSION PRO</div><h1>Attestation de réussite</h1><p>décernée à</p><h2>${esc(n)}</h2><p>pour la réussite de l'examen Pro de montage vidéo, score ${proBest} / 20</p><p>Le ${new Date().toLocaleDateString('fr-FR')}</p><small>Attestation d'auto-évaluation, document personnel non officiel.</small></div>`;
+  document.body.classList.add('pc');window.print();setTimeout(()=>document.body.classList.remove('pc'),800);
+}
+MODULES.splice(MODULES.findIndex(m=>m.id==='tp'),0,{id:"flash",num:"▣",title:"Cartes de révision",sub:"Répétition espacée · 24 cartes",ready:true,pro:true},{id:"proexam",num:"★",title:"Examen Pro",sub:"20 mises en situation · 25 min",ready:true,pro:true});
+let tm=0,days=[];try{tm=+localStorage.getItem('cc_time')||0;days=JSON.parse(localStorage.getItem('cc_days')||'[]');}catch(e){}
+const today=()=>new Date().toISOString().slice(0,10);
+if(!days.includes(today()))days.push(today());
+setInterval(()=>{if(document.hidden)return;tm+=.5;if(!days.includes(today()))days.push(today());try{localStorage.setItem('cc_time',tm);localStorage.setItem('cc_days',JSON.stringify(days.slice(-400)));}catch(e){}},30000);
+function streak(){let s=0,d=new Date();while(days.includes(d.toISOString().slice(0,10))){s++;d.setDate(d.getDate()-1);}return s;}
+function proHome(){
+  const mods=MODULES.filter(m=>m.id[0]==='m'),fin=mods.filter(m=>done[m.id]).length,next=mods.find(m=>!done[m.id])||mods[0],mast=FLASH.filter((_,i)=>(flashState[i]||0)>=3).length;
+  const cards=MODULES.filter(m=>!m.pro||MODE==='pro').map(m=>`<div class="mcard ${m.ready?'':'locked'} ${done[m.id]?'done':''}" onclick="go('${m.id}')"><span class="st">${done[m.id]?'✓ Terminé':m.pro?'Pro':'Disponible'}</span><div class="n">${m.id[0]==='m'?'MODULE '+m.num:m.pro?'PRO':'BONUS'}</div><h3>${m.title}</h3><p>${m.sub}</p></div>`).join('');
+  return `<div class="hero"><span class="kicker">VERSION PRO · TABLEAU DE BORD</span><h1 class="page-title">Ton studio d'entraînement</h1><p class="lede">Suis ta progression, révise avec les cartes, valide ton niveau avec l'examen Pro chronométré. Raccourcis : J / K module suivant ou précédent, F mode focus, / recherche, H accueil.</p><button class="btn" onclick="go('${next.id}')">${fin?'Reprendre : '+next.title:'Commencer la formation'}</button></div><div class="stats"><div class="stat"><b>${Math.round(tm)} min</b><span>temps d'étude</span></div><div class="stat"><b>${streak()} j</b><span>jours consécutifs</span></div><div class="stat"><b>${fin}/${mods.length}</b><span>modules terminés</span></div><div class="stat"><b>${mast}/${FLASH.length}</b><span>cartes maîtrisées</span></div><div class="stat"><b>${proBest?proBest+'/20':'—'}</b><span>examen Pro</span></div></div><div class="grid">${cards}</div>`;
+}
+const _rh=renderHome;
+renderHome=function(){return MODE==='pro'?proHome():_rh();};
+const _rm5=renderMain;
+renderMain=function(){
+  _rm5();
+  if(MODE!=='pro')return;
+  const main=document.getElementById('main');
+  if(PRO[current]){const ns=main.querySelector('textarea.notes'),host=ns?ns.closest('section'):main.querySelector('.actions');if(host)host.insertAdjacentHTML('beforebegin',proHtml(current));}
+  if(current==='tp'){const a=main.querySelector('.actions');if(a)a.insertAdjacentHTML('beforebegin',tpHtml());}
+  if(current==='flash')fcPick();
+  reveal();
+};
+function toggleFocus(){document.body.classList.toggle('focus');}
+function setMode(m){
+  MODE=m;try{localStorage.setItem('cc_mode',m);}catch(e){}
+  document.documentElement.setAttribute('data-mode',m);
+  const p=document.getElementById('modePill');if(p)p.textContent=m==='pro'?'Pro ⇄':'Classic ⇄';
+  document.getElementById('gate').classList.remove('show');document.body.classList.remove('focus');
+  renderNav();go('home');if(location.hash.replace('#','')==='home'||true){current='home';renderMain();}
+}
+function openGate(){document.getElementById('gate').classList.add('show');}
+(function(){
+  const g=document.createElement('div');g.id='gate';
+  g.innerHTML=`<div class="gwrap"><div class="logo big"></div><h1>CapCut Academy</h1><p class="gl">Choisis ta version de la formation. Tu pourras en changer à tout moment, ta progression est conservée.</p><div class="gcards"><button class="gcard" onclick="setMode('classic')"><span class="gb">CLASSIC</span><h3>Version Classic</h3><p>Le parcours guidé pas à pas, idéal pour apprendre les bases et progresser à ton rythme.</p><ul><li>13 modules avec illustrations animées</li><li>Exercices, quiz et cas d'étude</li><li>6 travaux pratiques et examen final</li><li>Fiches techniques, lexique, raccourcis</li></ul><em>Choisir Classic →</em></button><button class="gcard pro" onclick="setMode('pro')"><span class="gb">PRO</span><h3>Version Pro</h3><p>Tout le Classic, plus les outils pour viser un niveau professionnel.</p><ul><li>Niveau Pro dans chaque module : workflows, repères chiffrés</li><li>Tableau de bord : temps d'étude, jours consécutifs</li><li>Cartes de révision à répétition espacée</li><li>Examen Pro chronométré + attestation imprimable</li><li>Carnet de suivi des TP, raccourcis clavier, mode focus</li></ul><em>Choisir Pro →</em></button></div></div>`;
+  document.body.appendChild(g);
+  const top=document.querySelector('.top'),th=top.querySelector('button[title]');
+  const pill=document.createElement('button');pill.id='modePill';pill.className='mode-pill';pill.title='Changer de version';pill.onclick=openGate;top.insertBefore(pill,th);
+  const fb=document.createElement('button');fb.className='icon-btn pro-i';fb.textContent='◧';fb.title='Mode focus (F)';fb.onclick=toggleFocus;top.insertBefore(fb,th);
+  if(MODE){document.documentElement.setAttribute('data-mode',MODE);pill.textContent=MODE==='pro'?'Pro ⇄':'Classic ⇄';}else{MODE='classic';pill.textContent='Classic ⇄';g.classList.add('show');}
+  addEventListener('keydown',e=>{
+    if(MODE!=='pro'||e.ctrlKey||e.metaKey||e.altKey)return;
+    const t=e.target.tagName;if(t==='INPUT'||t==='TEXTAREA')return;
+    const l=MODULES.filter(m=>m.ready&&(!m.pro||MODE==='pro')),i=l.findIndex(m=>m.id===current);
+    if(e.key==='j'&&l[i+1])go(l[i+1].id);else if(e.key==='k'&&i>0)go(l[i-1].id);else if(e.key==='h')go('home');else if(e.key==='f')toggleFocus();
+    else if(e.key==='/'){e.preventDefault();document.body.classList.remove('focus');const s=document.getElementById('navSearch');if(s)s.focus();}
+  });
+})();
+
+/* ===== v6 : comptes, accès gratuit, Pro payant ===== */
+const CFG=Object.assign({SUPABASE_URL:"",SUPABASE_ANON_KEY:"",PAYMENT_LINK:"",PRICE_LABEL:"1,99 €"},window.CC_CONFIG||{});
+const LIVE=!!(CFG.SUPABASE_URL&&CFG.SUPABASE_ANON_KEY);
+const FREE_CLASSIC=['m0','m1','m2','m3','m4','m5','m6'],FREE_PRO_MODS=['m0','m1','m2'],FREE_CARDS=6;
+const NOACC={email:'',uid:'',token:'',refresh:'',paid:false};
+let ACC=Object.assign({},NOACC),pendingMode=null;
+try{const a=JSON.parse(localStorage.getItem('cc_acc')||'null');if(a&&a.email)ACC=Object.assign(ACC,a);}catch(e){}
+function saveAcc(){try{localStorage.setItem('cc_acc',JSON.stringify(ACC));}catch(e){}}
+const flashLimit=()=>ACC.paid?FLASH.length:FREE_CARDS;
+const val=id=>(document.getElementById(id)||{}).value||'';
+async function api(path,opt){
+  opt=opt||{};
+  const r=await fetch(CFG.SUPABASE_URL+path,Object.assign({},opt,{headers:Object.assign({apikey:CFG.SUPABASE_ANON_KEY,'Content-Type':'application/json'},opt.headers||{})}));
+  const t=await r.text();let j={};try{j=JSON.parse(t);}catch(e){}
+  if(!r.ok)throw new Error(j.error_description||j.msg||j.message||('Erreur '+r.status));
+  return j;
+}
+async function loadPlan(){
+  if(!LIVE){let p={};try{p=JSON.parse(localStorage.getItem('cc_demo_paid')||'{}');}catch(e){}ACC.paid=!!p[ACC.email];return;}
+  try{const r=await api('/rest/v1/entitlements?select=plan&user_id=eq.'+encodeURIComponent(ACC.uid),{headers:{Authorization:'Bearer '+ACC.token}});ACC.paid=r.length>0&&r[0].plan==='pro';}catch(e){}
+}
+function lockFor(id){
+  if(id==='home'||id==='glossary'||id==='shortcuts')return null;
+  const m=MODULES.find(x=>x.id===id);if(!m)return null;
+  if(m.pro){if(!ACC.email)return 'account';return(id==='proexam'&&!ACC.paid)?'paid':null;}
+  if(FREE_CLASSIC.includes(id))return null;
+  return ACC.email?null:'account';
+}
+function modal(html){
+  let m=document.getElementById('modal');if(!m){m=document.createElement('div');m.id='modal';document.body.appendChild(m);}
+  m.innerHTML='<div class="mbox"><button class="mclose" onclick="closeModal()" aria-label="Fermer">×</button><div id="mBody">'+html+'</div></div>';
+  m.classList.add('show');
+}
+function closeModal(){const m=document.getElementById('modal');if(m)m.classList.remove('show');}
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+function openAuth(kind,msg){
+  const su=kind==='signup';
+  modal('<h2>'+(su?'Créer un compte gratuit':'Se connecter')+'</h2>'+(msg?'<p class="mmsg">'+msg+'</p>':'')+(LIVE?'':'<p class="demo">Mode démo : aucun e-mail n\'est envoyé et rien n\'est vérifié. Renseigne config.js pour activer les vrais comptes.</p>')+'<input class="search" id="aEmail" type="email" placeholder="Adresse e-mail" autocomplete="email"><input class="search" id="aPw" type="password" placeholder="Mot de passe (8 caractères minimum)" autocomplete="'+(su?'new-password':'current-password')+'">'+(su?'<label class="cons"><input type="checkbox" id="aCons"> J\'accepte que mon adresse e-mail soit utilisée pour gérer mon compte, conformément à la politique de confidentialité.</label>':'')+'<div class="err" id="aErr"></div><button class="btn" onclick="authSubmit(\''+kind+'\')">'+(su?'Créer mon compte':'Me connecter')+'</button><p class="alt">'+(su?'Déjà inscrit ? <a class="lnk" onclick="openAuth(\'login\')">Se connecter</a>':'Pas encore de compte ? <a class="lnk" onclick="openAuth(\'signup\')">Créer un compte gratuit</a>')+'</p>');
+}
+function setSession(j){ACC={email:(j.user&&j.user.email)||'',uid:(j.user&&j.user.id)||'',token:j.access_token,refresh:j.refresh_token,paid:false};}
+async function authSubmit(kind){
+  const em=val('aEmail').trim().toLowerCase(),pw=val('aPw'),err=document.getElementById('aErr');err.textContent='';
+  if(!/^\S+@\S+\.\S+$/.test(em)){err.textContent='Adresse e-mail invalide.';return;}
+  if(pw.length<8){err.textContent='Mot de passe : 8 caractères minimum.';return;}
+  if(kind==='signup'&&!document.getElementById('aCons').checked){err.textContent='Accepte la politique de confidentialité pour créer un compte.';return;}
+  try{
+    if(LIVE){
+      if(kind==='signup'){
+        const j=await api('/auth/v1/signup',{method:'POST',body:JSON.stringify({email:em,password:pw})});
+        if(!j.access_token){document.getElementById('mBody').innerHTML='<h2>Vérifie ta boîte mail</h2><p>Ton compte est créé. Clique sur le lien de confirmation reçu par e-mail, puis reviens te connecter.</p><button class="btn" onclick="openAuth(\'login\')">Me connecter</button>';return;}
+        setSession(j);
+      }else{setSession(await api('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:em,password:pw})}));}
+    }else{
+      let u={};try{u=JSON.parse(localStorage.getItem('cc_demo_users')||'{}');}catch(e){}
+      if(kind==='signup'){u[em]=1;localStorage.setItem('cc_demo_users',JSON.stringify(u));}
+      else if(!u[em])throw new Error('Compte démo introuvable : crée-le d\'abord.');
+      ACC={email:em,uid:'demo',token:'',refresh:'',paid:false};
+    }
+    await loadPlan();saveAcc();afterAuth();
+  }catch(e){err.textContent=e.message||'Erreur inattendue.';}
+}
+function afterAuth(){closeModal();updateAccBtn();if(pendingMode){const m=pendingMode;pendingMode=null;setMode(m);}else{renderNav();renderMain();}}
+function logout(){ACC=Object.assign({},NOACC);saveAcc();closeModal();updateAccBtn();if(MODE==='pro')setMode('classic');else{renderNav();renderMain();}}
+function openProfile(){
+  modal('<h2>Mon compte</h2><p><b>'+esc(ACC.email)+'</b></p><p>Formule : '+(ACC.paid?'Pro complet':'Gratuite (Classic complet + aperçu Pro)')+'</p>'+(ACC.paid?'':'<button class="btn" onclick="openPay()">Débloquer le Pro complet · '+CFG.PRICE_LABEL+'</button> ')+'<button class="btn ghost" onclick="logout()">Se déconnecter</button>');
+}
+function openPay(){
+  if(!ACC.email){openAuth('signup','Crée d\'abord un compte gratuit, puis débloque le Pro complet.');return;}
+  modal('<h2>Débloquer le Pro complet</h2><p class="price">'+CFG.PRICE_LABEL+'<small> · paiement unique</small></p><ul><li>Niveau Pro dans les 13 modules</li><li>Les 24 cartes de révision</li><li>Examen Pro chronométré et attestation</li><li>Carnet de suivi des TP</li></ul><label class="cons"><input type="checkbox" id="pCons"> Je demande l\'accès immédiat à ce contenu numérique et je reconnais perdre mon droit de rétractation une fois l\'accès accordé.</label><div class="err" id="pErr"></div><button class="btn" onclick="payNow()">'+(LIVE?'Payer '+CFG.PRICE_LABEL:'Simuler le paiement (démo)')+'</button>'+(LIVE?'':'<p class="demo">Mode démo : aucun paiement réel. Renseigne PAYMENT_LINK dans config.js.</p>'));
+}
+function payNow(){
+  const er=document.getElementById('pErr');
+  if(!document.getElementById('pCons').checked){er.textContent='Coche la case pour continuer.';return;}
+  if(LIVE){
+    if(!CFG.PAYMENT_LINK){er.textContent='Le paiement n\'est pas encore configuré.';return;}
+    location.href=CFG.PAYMENT_LINK+(CFG.PAYMENT_LINK.indexOf('?')>-1?'&':'?')+'client_reference_id='+encodeURIComponent(ACC.uid)+'&prefilled_email='+encodeURIComponent(ACC.email);return;
+  }
+  let p={};try{p=JSON.parse(localStorage.getItem('cc_demo_paid')||'{}');}catch(e){}
+  p[ACC.email]=true;localStorage.setItem('cc_demo_paid',JSON.stringify(p));ACC.paid=true;saveAcc();closeModal();updateAccBtn();renderNav();renderMain();
+}
+function updateAccBtn(){const b=document.getElementById('accBtn');if(b)b.textContent=ACC.email?(ACC.paid?'Compte · Pro ✓':'Mon compte'):'Se connecter';}
+function renderLock(kind){
+  document.body.classList.remove('menu-open');
+  const main=document.getElementById('main'),m=MODULES.find(x=>x.id===current),ac=kind==='account';
+  main.innerHTML='<div class="kicker">'+(ac?'COMPTE GRATUIT REQUIS':'PRO · ACCÈS PAYANT')+'</div><h1 class="page-title">'+m.title+'</h1><p class="lede">'+m.sub+'</p><div class="lockcard"><h2>'+(ac?'Continue la formation gratuitement':'Débloque le Pro complet')+'</h2><p>'+(ac?'Les '+FREE_CLASSIC.length+' premiers modules sont ouverts à tous. Crée un compte gratuit avec ton adresse e-mail pour accéder à la suite de la version Classic (modules, travaux pratiques, fiches techniques, examen final) et à un aperçu de la version Pro.':'Cette partie fait partie du Pro complet : '+CFG.PRICE_LABEL+', paiement unique.')+'</p><button class="btn" onclick="'+(ac?"openAuth('signup')":"openPay()")+'">'+(ac?'Créer mon compte gratuit':'Débloquer pour '+CFG.PRICE_LABEL)+'</button>'+(ac?'<p class="alt">Déjà inscrit ? <a class="lnk" onclick="openAuth(\'login\')">Se connecter</a></p>':'')+'</div>';
+  window.scrollTo(0,0);
+}
+function lockBox(t){return '<section class="block"><h2>'+t+' <span class="badge">PRO</span></h2><div class="lockcard"><p>Cette partie fait partie du Pro complet.</p><button class="btn" onclick="openPay()">Débloquer pour '+CFG.PRICE_LABEL+'</button></div></section>';}
+const _ph=proHtml;proHtml=function(id){return(FREE_PRO_MODS.includes(id)||ACC.paid)?_ph(id):lockBox('Niveau Pro');};
+const _th=tpHtml;tpHtml=function(){return ACC.paid?_th():lockBox('Carnet de suivi des TP');};
+function homeBanner(){
+  let t;
+  if(!ACC.email)t='Les '+FREE_CLASSIC.length+' premiers modules sont gratuits, sans compte. <a class="lnk" onclick="openAuth(\'signup\')">Crée un compte gratuit</a> pour débloquer la suite et un aperçu du Pro.';
+  else if(!ACC.paid)t='Compte actif : toute la version Classic est ouverte. Le Pro est en aperçu (3 modules, 6 cartes) — <a class="lnk" onclick="openPay()">débloque tout pour '+CFG.PRICE_LABEL+'</a>.';
+  else return '';
+  return '<div class="banner">'+t+'</div>';
+}
+const _rm6=renderMain;
+renderMain=function(){
+  const k=lockFor(current);
+  if(k){renderLock(k);return;}
+  _rm6();
+  if(current==='home')document.getElementById('main').insertAdjacentHTML('afterbegin',homeBanner());
+};
+const _rn2=renderNav;
+renderNav=function(){
+  _rn2();
+  document.querySelectorAll('#navList .nav-item').forEach(el=>{
+    const mm=(el.getAttribute('onclick')||'').match(/go\('(\w+)'\)/);if(!mm)return;
+    const k=lockFor(mm[1]);if(k&&!el.querySelector('.soon'))el.insertAdjacentHTML('beforeend','<em class="soon">'+(k==='paid'?CFG.PRICE_LABEL:'Compte')+'</em>');
+  });
+};
+const _sm=setMode;
+setMode=function(m){
+  if(m==='pro'&&!ACC.email){pendingMode='pro';openAuth('signup','Un compte gratuit est nécessaire pour accéder à la version Pro (aperçu gratuit, puis Pro complet à '+CFG.PRICE_LABEL+').');return;}
+  _sm(m);
+};
+(function(){
+  const top=document.querySelector('.top'),pill=document.getElementById('modePill');
+  const b=document.createElement('button');b.id='accBtn';b.className='mode-pill';b.onclick=()=>ACC.email?openProfile():openAuth('login');top.insertBefore(b,pill);
+  if(MODE==='pro'&&!ACC.email){MODE='classic';document.documentElement.setAttribute('data-mode','classic');try{localStorage.setItem('cc_mode','classic');}catch(e){}if(pill)pill.textContent='Classic ⇄';}
+  updateAccBtn();
+  const gc=document.querySelector('#gate .gcard:not(.pro) ul'),gp=document.querySelector('#gate .gcard.pro ul'),gw=document.querySelector('#gate .gwrap');
+  if(gc)gc.insertAdjacentHTML('afterbegin','<li><b>'+FREE_CLASSIC.length+' premiers modules gratuits</b>, sans compte</li><li>La suite avec un compte gratuit</li>');
+  if(gp)gp.insertAdjacentHTML('afterbegin','<li><b>Compte gratuit requis</b> : aperçu de 3 modules Pro et 6 cartes</li><li><b>Pro complet '+CFG.PRICE_LABEL+'</b>, paiement unique</li>');
+  if(gw)gw.insertAdjacentHTML('beforeend','<p class="disc">Formation indépendante, non affiliée à CapCut ni à ByteDance.</p>');
+})();
+async function initAcc(){
+  if(!ACC.email)return;
+  if(LIVE&&ACC.refresh){
+    try{const j=await api('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:JSON.stringify({refresh_token:ACC.refresh})});ACC.token=j.access_token;ACC.refresh=j.refresh_token;}
+    catch(e){if(!(e instanceof TypeError)){ACC=Object.assign({},NOACC);saveAcc();updateAccBtn();renderNav();renderMain();return;}}
+  }
+  await loadPlan();
+  if(LIVE&&/[?&]paid=1/.test(location.search)&&!ACC.paid){for(let i=0;i<6&&!ACC.paid;i++){await new Promise(r=>setTimeout(r,2000));await loadPlan();}}
+  saveAcc();updateAccBtn();renderNav();renderMain();
+}
+initAcc();
+
+renderNav();
+renderMain();
+updateProgress();
+</script>
+</body>
+</html>
